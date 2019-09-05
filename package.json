@@ -1,12 +1,12 @@
 {
   "name": "ateliers-chartreux",
   "private": true,
-  "description": "A simplified bare-bones starter for Gatsby",
+  "description": "Le site des Ateliers Chartreux",
   "version": "0.1.0",
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
-    "develop": "env-cmd .env.development gatsby develop",
+    "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "npm run develop",
     "serve": "gatsby serve",
@@ -19,7 +19,6 @@
     "react-dom": "^16.9.0"
   },
   "devDependencies": {
-    "env-cmd": "^10.0.1",
     "prettier": "^1.18.2"
   },
   "repository": {

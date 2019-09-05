@@ -4,6 +4,7 @@
  * See: https://www.gatsbyjs.org/docs/gatsby-config/
  */
 
+// Load environment variables
 require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
 })
@@ -14,11 +15,10 @@ module.exports = {
     {
       resolve: `gatsby-source-contentful`,
       options: {
-        // spaceId: "pqtp43omz40l5",
-        // accessToken: "uf4QNNsP6fi9ssMiHj5ZfYjIgLGbhVuvB55ACBwn29s",
         spaceId: process.env.CONTENTFUL_SPACE_ID,
         accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
       },
     },
+    `gatsby-plugin-sass`,
   ],
 }

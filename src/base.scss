@@ -1,0 +1,44 @@
+// GLOBAL RESET
+* {
+    margin: 0;
+    padding: 0;
+
+    &,
+    &::before,
+    &::after {
+        box-sizing: inherit;
+    }
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%; // 1rem = 62.5% * 16px = 10px
+}
+
+// FONTS
+@font-face {
+    font-family: "Rubik";
+    src: url("./fonts/Rubik/Rubik-Regular.ttf") format("truetype");
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Saira";
+    src: url("./fonts/Saira/Saira-Regular.ttf") format("truetype");
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Saira";
+    src: url("./fonts/Saira/Saira-SemiBold.ttf") format("truetype");
+    font-weight: 600;
+}
+
+$saira: "Saira",
+sans-serif;
+$rubik: "Rubik",
+sans-serif;
+
+// COLORS
+$orange-gradient: linear-gradient(to right, #e65c00, #f9d423);
+$black-gradient-diagonal: linear-gradient(141deg, #232526, #414345);

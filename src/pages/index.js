@@ -1,4 +1,5 @@
 import React from "react"
-import "../base.scss"
+import "reset.scss"
+import "../base.module.scss"
 
 export default () => <div>Hello world!</div>

@@ -1,1 +1,27 @@
 @import "../../common";
+
+.intro {
+    display: flex;
+    justify-content: center;
+
+    padding: 3rem 0;
+    background: rgba(#000, 0.25);
+    color: #fff;
+
+    &__content {
+        width: 115.2rem;
+        column-count: 2;
+        line-height: 1.6;
+    }
+
+    &__title {
+        font-size: 3rem;
+        font-family: $saira;
+        margin-bottom: 2rem;
+    }
+
+    &__text {
+        font-size: 1.8rem;
+        font-family: $rubik;
+    }
+}

@@ -1,6 +1,12 @@
 import React from "react"
-import PropTypes from "prop-types"
+import Header from "../Header"
+import LayoutStyles from "./Layout.module.scss"
 
-const Layout = props => <div className="LayoutWrapper">Test content</div>
+const Layout = ({ children }) => (
+  <div className={LayoutStyles.container}>
+    <Header />
+    <main>{children}</main>
+  </div>
+)
 
 export default Layout

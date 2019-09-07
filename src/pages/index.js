@@ -1,5 +1,5 @@
-import React from "react"
-import "reset.scss"
-import "../base.module.scss"
+/* Fichier temporaire */
 
-export default () => <div>Hello world!</div>
+import Accueil from "./Accueil"
+
+export default Accueil

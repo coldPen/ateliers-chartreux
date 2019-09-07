@@ -1,1 +1,8 @@
-/* your css code */
+@import "../../common";
+
+.container {
+    display: flex;
+    flex-direction: column;
+
+    background-image: $black-gradient-diagonal;
+}

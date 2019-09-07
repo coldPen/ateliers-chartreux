@@ -1,1 +1,69 @@
-.header {}
+@import "../../common";
+
+.header {
+    display: flex;
+    justify-content: center;
+
+    &__menu {
+        width: 115.2rem;
+        height: 6rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__link {
+        font-family: $saira;
+        font-size: 1.8rem;
+        text-decoration: none;
+        text-transform: uppercase;
+        color: #fff;
+
+        position: relative;
+        white-space: nowrap;
+
+        &:hover,
+        &:focus {
+            background: $orange-gradient;
+            background-clip: border-box;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        // Bordures supérieures et inférieures des liens
+        &:before {
+            @include link-border(top);
+
+            background: #fff;
+
+            transform: scaleX(0);
+            transform-origin: 100% 50%;
+
+            transition: transform 0.2s ease-in-out;
+        }
+
+        &:after {
+            @include link-border(bottom);
+
+            background: #fff;
+
+            transform: scaleX(0);
+            transform-origin: 0% 50%;
+
+            transition: transform 0.2s ease-in-out;
+        }
+
+        &:hover:before,
+        &:focus:before,
+        &:hover:after,
+        &:focus:after {
+            background: $orange-gradient;
+
+            transform: scaleX(1);
+
+            transition: all 0.2s ease-in-out;
+        }
+    }
+
+    &__logo {}
+}

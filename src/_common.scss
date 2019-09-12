@@ -23,18 +23,18 @@ $black-gradient-diagonal: linear-gradient(141deg, #232526, #414345);
 // LOAD LOCAL FONTS
 @font-face {
     font-family: "Rubik";
-    src: url("../../fonts/Rubik/Rubik-Regular.ttf") format("truetype");
+    src: url("../fonts/Rubik/Rubik-Regular.ttf") format("truetype");
     font-weight: 400;
 }
 
 @font-face {
     font-family: "Saira";
-    src: url("../../fonts/Saira/Saira-Regular.ttf") format("truetype");
+    src: url("../fonts/Saira/Saira-Regular.ttf") format("truetype");
     font-weight: 400;
 }
 
 @font-face {
     font-family: "Saira";
-    src: url("../../fonts/Saira/Saira-SemiBold.ttf") format("truetype");
+    src: url("../fonts/Saira/Saira-SemiBold.ttf") format("truetype");
     font-weight: 600;
 }

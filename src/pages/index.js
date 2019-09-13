@@ -1,6 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/Layout"
+import BlogList from "../components/BlogList"
 import "../reset.scss"
 import {
   intro,
@@ -15,7 +16,7 @@ export default ({ data }) => {
       <section className={intro}>
         <div className={intro__content}>
           <h2 className={intro__title}>
-            Éditorial du {data.contentfulAccueil.date}
+            Édito du {data.contentfulAccueil.date}
           </h2>
           <div
             className={intro__text}
@@ -25,6 +26,7 @@ export default ({ data }) => {
           ></div>
         </div>
       </section>
+      <BlogList />
     </Layout>
   )
 }

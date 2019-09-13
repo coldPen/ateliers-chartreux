@@ -7,7 +7,7 @@ import {
   header__logo,
 } from "./Header.module.scss"
 
-const Header = () => (
+export default () => (
   <header className={header}>
     <nav className={header__menu}>
       <Link to="/impression/" className={header__link}>
@@ -28,5 +28,3 @@ const Header = () => (
     </nav>
   </header>
 )
-
-export default Header

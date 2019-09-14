@@ -15,12 +15,13 @@ export default () => {
       allContentfulPhotoPosts {
         edges {
           node {
+            id
             titre
             dateAndTime(formatString: "L à HH[h]MM")
             tags
             photo {
-              file {
-                url
+              fixed(width: 358, height: 269) {
+                ...GatsbyContentfulFixed
               }
               title
               description
@@ -33,14 +34,19 @@ export default () => {
       }
     }
   `)
+  console.log(data.allContentfulPhotoPosts.edges[0].node.photo.fixed)
   return (
     <section className={blogList}>
-      {data.allContentfulPhotoPosts.edges.map(edge => (
-        <article className={blogList__article}>
+      {data.allContentfulPhotoPosts.edges.map((edge, i) => (
+        <article className={blogList__article} key={i}>
           <header className={blogList__articleHeader}>
             <h3 className={blogList__articleTitle}>{edge.node.titre}</h3>
             <p className={blogList__articleDate}>{edge.node.dateAndTime}</p>
           </header>
+          <Img
+            fixed={edge.node.photo.fixed}
+            alt={edge.node.photo.description}
+          />
         </article>
       ))}
     </section>

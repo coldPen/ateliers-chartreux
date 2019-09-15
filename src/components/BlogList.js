@@ -1,26 +1,29 @@
 import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
-import { Img } from "gatsby-image"
+import { Link, useStaticQuery, graphql } from "gatsby"
+import Img from "gatsby-image"
 import {
   blogList,
   blogList__article,
   blogList__articleHeader,
   blogList__articleTitle,
   blogList__articleDate,
+  blogList__articleImage,
 } from "./BlogList.module.scss"
 
 export default () => {
   const data = useStaticQuery(graphql`
     query BlogListQuery {
-      allContentfulPhotoPosts {
+      allContentfulPhotoPosts(
+        limit: 12
+        sort: { fields: createdAt, order: DESC }
+      ) {
         edges {
           node {
             id
             titre
-            dateAndTime(formatString: "L à HH[h]MM")
-            tags
+            createdAt(formatString: "DD/MM/YYYY à HH[h]mm")
             photo {
-              fixed(width: 358, height: 269) {
+              fixed(width: 306, height: 172) {
                 ...GatsbyContentfulFixed
               }
               title
@@ -34,20 +37,20 @@ export default () => {
       }
     }
   `)
-  console.log(data.allContentfulPhotoPosts.edges[0].node.photo.fixed)
   return (
     <section className={blogList}>
       {data.allContentfulPhotoPosts.edges.map((edge, i) => (
-        <article className={blogList__article} key={i}>
+        <Link className={blogList__article} key={i}>
           <header className={blogList__articleHeader}>
             <h3 className={blogList__articleTitle}>{edge.node.titre}</h3>
-            <p className={blogList__articleDate}>{edge.node.dateAndTime}</p>
+            <p className={blogList__articleDate}>{edge.node.createdAt}</p>
           </header>
           <Img
             fixed={edge.node.photo.fixed}
             alt={edge.node.photo.description}
+            className={blogList__articleImage}
           />
-        </article>
+        </Link>
       ))}
     </section>
   )

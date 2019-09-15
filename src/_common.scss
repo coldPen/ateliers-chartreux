@@ -6,8 +6,10 @@ $rubik: "Rubik",
 sans-serif;
 
 // COLORS
-$orange-gradient: linear-gradient(to right, #e65c00, #f9d423);
-$black-gradient-diagonal: linear-gradient(141deg, #232526, #414345);
+$link-gradient: linear-gradient(to right, #e65c00, #f9d423);
+$page-gradient: linear-gradient(141deg, #232526, #414345);
+$block-background: rgba(#000, 0.25);
+$block-background-hovered: rgba(#000, 0.5);
 
 /* MIXINS */
 @mixin link-border($pos) {

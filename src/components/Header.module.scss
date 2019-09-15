@@ -26,7 +26,7 @@
 
         &:hover,
         &:focus {
-            background: $orange-gradient;
+            background: $link-gradient;
             background-clip: border-box;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -59,7 +59,7 @@
         &:focus:before,
         &:hover:after,
         &:focus:after {
-            background: $orange-gradient;
+            background: $link-gradient;
 
             transform: scaleX(1);
 

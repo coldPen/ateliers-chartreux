@@ -1,66 +1,70 @@
 @import "../common";
 
 .blogList {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 3rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 3rem;
 
-    padding: 3rem 10rem;
+  padding: 3rem 10rem;
 
-    &__article {
-        background: $block-background;
-        color: #fff;
-        padding: 3rem;
-        border-radius: 0.6rem;
+  @include min-width(large) {
+    grid-template-columns: repeat(4, 1fr);
+  }
 
-        text-decoration: none;
-        transition: all 0.2s;
+  &__article {
+    background: $block-background;
+    color: #fff;
+    padding: 3rem;
+    border-radius: 0.6rem;
 
-        &:hover {
-            background: $block-background-hovered;
-            transform: scale(1.01);
+    text-decoration: none;
+    transition: all 0.2s;
 
-            .blogList__articleHeader {
-                transform: translateY(0.4rem);
-            }
+    &:hover {
+      background: $block-background-hovered;
+      transform: scale(1.01);
 
-            .blogList__articleTitle {
-                background: $link-gradient;
-                background-clip: border-box;
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;
-            }
+      .blogList__articleHeader {
+        transform: translateY(0.4rem);
+      }
 
-            .blogList__articleImage {
-                transform: translateY(-0.4rem);
-            }
-        }
+      .blogList__articleTitle {
+        background: $link-gradient;
+        background-clip: border-box;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .blogList__articleImage {
+        transform: translateY(-0.4rem);
+      }
     }
+  }
 
-    &__articleHeader {
-        font-family: $saira;
-        margin-bottom: 2rem;
+  &__articleHeader {
+    font-family: $saira;
+    margin-bottom: 2rem;
 
-        transition: all 0.2s;
-    }
+    transition: all 0.2s;
+  }
 
-    &__articleTitle {
-        font-size: 2rem;
-        line-height: 1;
+  &__articleTitle {
+    font-size: 2rem;
+    line-height: 1;
 
-        width: 30.6rem;
-        white-space: nowrap;
-        text-overflow: ellipsis;
-        overflow: hidden;
-    }
+    width: 30.6rem;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
 
-    &__articleDate {
-        font-size: 1.4rem;
-    }
+  &__articleDate {
+    font-size: 1.4rem;
+  }
 
-    &__articleImage {
-        border-radius: 0.6rem;
+  &__articleImage {
+    border-radius: 0.6rem;
 
-        transition: all 0.2s;
-    }
+    transition: all 0.2s;
+  }
 }

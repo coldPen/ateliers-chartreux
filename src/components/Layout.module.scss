@@ -1,8 +1,14 @@
 @import "../common";
 
 .container {
+  display: flex;
+  flex-direction: column;
+
+  background-image: $page-gradient;
+
+  &__content {
     display: flex;
     flex-direction: column;
-
-    background-image: $page-gradient;
+    justify-content: center;
+  }
 }

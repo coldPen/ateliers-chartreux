@@ -30,7 +30,7 @@ export default () => {
           dangerouslySetInnerHTML={{
             __html: data.contentfulAccueil.texte.childMarkdownRemark.html,
           }}
-        ></div>
+        />
       </div>
     </section>
   )

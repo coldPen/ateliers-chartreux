@@ -2,11 +2,11 @@ import React from "react"
 
 import Header from "./Header"
 
-import { container } from "./Layout.module.scss"
+import { container, container__content } from "./Layout.module.scss"
 
 export default ({ children }) => (
   <div className={container}>
     <Header />
-    <main>{children}</main>
+    <main className={container__content}>{children}</main>
   </div>
 )

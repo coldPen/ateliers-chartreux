@@ -23,7 +23,33 @@ $white-separation-border: 0.1rem solid rgba(#fff, 0.4);
     content: "";
 }
 
-// LOAD LOCAL FONTS
+// BREAKPOINT MANAGER
+@mixin min-width($breakpoint) {
+
+    /*
+    // 500px / 16px = 31.25em
+    @if $breakpoint == small {
+      @media only screen and (min-width: 31.25em) {
+        @content;
+      }
+    }
+    // 900px / 16px = 56.25em
+    @if $breakpoint == medium {
+      @media only screen and (min-width: 56.25em) {
+        @content;
+      }
+    }
+    */
+
+    // 1800px / 16px = 112.5em
+    @if $breakpoint == large {
+      @media only screen and (min-width: 112.5em) {
+        @content;
+      }
+    }
+  }
+
+/* LOAD LOCAL FONTS */
 @font-face {
     font-family: "Rubik";
     src: url("../fonts/Rubik/Rubik-Regular.ttf") format("truetype");

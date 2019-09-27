@@ -7,10 +7,16 @@ import BlogList from "../components/BlogList"
 
 import "../reset.scss"
 
-export default ({ data }) => {
+export default ({ data, pageContext }) => {
+  const { currentPage, numPages } = pageContext
+  const isFirst = currentPage === 1
+  const isLast = currentPage === numPages
+  const prevPage =
+    currentPage - 1 === 1 ? "/" : `/blog/${(currentPage - 1).toString()}`
+  const nextPage = (currentPage + 1).toString()
   return (
     <Layout>
-      <Intro />
+      {isFirst && <Intro />}
       <BlogList data={data} />
     </Layout>
   )

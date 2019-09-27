@@ -2,7 +2,8 @@
 
 .blogPost {
     display: grid;
-    grid-template-columns: 3fr 2fr;
+    grid-template-columns: 90vh 1fr;
+    grid-template-rows: min-content 90vh;
     grid-row-gap: 2rem;
 
     padding: 3rem 10rem;
@@ -30,6 +31,7 @@
         grid-row: 2 / 3;
         grid-column: 1 / 2;
 
+        // Si défaut de chargement de l'image
         background: $block-background;
     }
 
@@ -48,7 +50,6 @@
 
     &__description {
         font-size: 1.8rem;
-        max-height: 50rem;
         overflow-y: auto;
     }
 

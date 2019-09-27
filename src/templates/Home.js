@@ -8,7 +8,6 @@ import BlogList from "../components/BlogList"
 import "../reset.scss"
 
 export default ({ data }) => {
-  console.log(data)
   return (
     <Layout>
       <Intro />
@@ -18,9 +17,10 @@ export default ({ data }) => {
 }
 
 export const query = graphql`
-  query BlogListQuery {
+  query BlogListQuery($skip: Int!, $limit: Int!) {
     allContentfulPhotoPosts(
-      limit: 12
+      limit: $limit
+      skip: $skip
       sort: { fields: createdAt, order: DESC }
     ) {
       edges {

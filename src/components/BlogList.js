@@ -14,7 +14,11 @@ import {
 export default ({ data }) => (
   <section className={blogList}>
     {data.allContentfulPhotoPosts.edges.map((edge, i) => (
-      <Link to={edge.node.slug} className={blogList__article} key={i}>
+      <Link
+        to={`/blog/${edge.node.slug}`}
+        className={blogList__article}
+        key={i}
+      >
         <header className={blogList__articleHeader}>
           <h3 className={blogList__articleTitle}>{edge.node.titre}</h3>
           <p className={blogList__articleDate}>{edge.node.createdAt}</p>

@@ -46,7 +46,6 @@
     background: $block-background;
     color: #fff;
     padding: 3rem;
-    border-radius: 0.6rem;
 
     text-decoration: none;
     transition: all 0.2s;
@@ -94,8 +93,6 @@
   }
 
   &__articleImage {
-    border-radius: 0.6rem;
-
     transition: all 0.2s;
   }
 }

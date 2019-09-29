@@ -36,8 +36,6 @@
     }
   }
 
-  padding: 3rem 10rem;
-
   @include min-width(large) {
     grid-template-columns: repeat(4, 1fr);
   }

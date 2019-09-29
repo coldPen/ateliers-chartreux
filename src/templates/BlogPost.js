@@ -4,6 +4,8 @@ import { graphql } from "gatsby"
 import Layout from "../components/Layout"
 import NonStretchedImage from "../components/NonStretchedImage"
 
+import "../reset.scss"
+
 import {
   blogPost,
   blogPost__header,

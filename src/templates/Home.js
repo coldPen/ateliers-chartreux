@@ -4,20 +4,18 @@ import { graphql } from "gatsby"
 import Layout from "../components/Layout"
 import Intro from "../components/Intro"
 import BlogList from "../components/BlogList"
+import BlogListPagination from "../components/BlogListPagination"
 
 import "../reset.scss"
 
 export default ({ data, pageContext }) => {
-  const { currentPage, numPages } = pageContext
+  const { currentPage } = pageContext
   const isFirst = currentPage === 1
-  const isLast = currentPage === numPages
-  const prevPage =
-    currentPage - 1 === 1 ? "/" : `/blog/${(currentPage - 1).toString()}`
-  const nextPage = (currentPage + 1).toString()
   return (
     <Layout>
       {isFirst && <Intro />}
       <BlogList data={data} />
+      <BlogListPagination pageContext={pageContext} />
     </Layout>
   )
 }
@@ -31,7 +29,6 @@ export const query = graphql`
     ) {
       edges {
         node {
-          id
           titre
           slug
           createdAt(formatString: "DD/MM/YYYY à HH[h]mm")

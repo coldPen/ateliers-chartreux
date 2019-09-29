@@ -1,0 +1,29 @@
+@import "../common";
+
+.pagination {
+    padding: 0 10rem;
+
+    display: flex;
+    justify-content: space-between;
+
+    &__button {
+        font-family: $saira;
+        text-decoration: none;
+        color: #fff;
+        font-size: 1.6rem;
+        background-color: $block-background;
+        padding: 0.6rem 1.2rem;
+
+        &:hover {
+            background: $block-background-hovered;
+
+            .pagination__text {
+                background: $link-gradient;
+                background-clip: border-box;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+        }
+    }
+
+}

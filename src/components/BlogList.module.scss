@@ -2,43 +2,14 @@
 
 .blogList {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
   grid-gap: 3rem;
 
   padding: 3rem 10rem;
 
-  &__article {
-    background: $block-background;
-    color: #fff;
-    padding: 3rem;
-
-    text-decoration: none;
-    transition: all 0.2s;
-
-    &:hover {
-      background: $block-background-hovered;
-      transform: scale(1.01);
-
-      .blogList__articleHeader {
-        transform: translateY(0.4rem);
-      }
-
-      .blogList__articleTitle {
-        background: $link-gradient;
-        background-clip: border-box;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-      }
-
-      .blogList__articleImage {
-        transform: translateY(-0.4rem);
-      }
-    }
-  }
-
-  @include min-width(large) {
-    grid-template-columns: repeat(4, 1fr);
-  }
+  // @include min-width(large) {
+  //   grid-template-columns: repeat(4, 1fr);
+  // }
 
   &__article {
     background: $block-background;
@@ -80,7 +51,6 @@
     font-size: 2rem;
     line-height: 1;
 
-    width: 30.6rem;
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;

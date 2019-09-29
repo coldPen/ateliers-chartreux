@@ -14,8 +14,10 @@
         background-color: $block-background;
         padding: 0.6rem 1.2rem;
 
+        transition: all 0.2s;
+
         &:hover {
-            background: $block-background-hovered;
+            background-color: $block-background-hovered;
 
             .pagination__text {
                 background: $link-gradient;
@@ -26,4 +28,7 @@
         }
     }
 
+    &__text {
+        transition: all 0.2s;
+    }
 }

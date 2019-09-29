@@ -20,6 +20,7 @@ export default ({ data, pageContext }) => {
   )
 }
 
+// /!\ Ajuster les dimensions maximales d'images avant lancement du site
 export const query = graphql`
   query BlogListQuery($skip: Int!, $limit: Int!) {
     allContentfulPhotoPosts(
@@ -33,8 +34,8 @@ export const query = graphql`
           slug
           createdAt(formatString: "DD/MM/YYYY à HH[h]mm")
           photo {
-            fixed(width: 306, height: 172) {
-              ...GatsbyContentfulFixed
+            fluid(maxWidth: 400, maxHeight: 225) {
+              ...GatsbyContentfulFluid
             }
             title
             description

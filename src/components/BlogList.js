@@ -1,6 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
-import Img from "gatsby-image"
+
+import NonStretchedImage from "../components/NonStretchedImage"
 
 import {
   blogList,
@@ -23,8 +24,8 @@ export default ({ data }) => (
           <h3 className={blogList__articleTitle}>{edge.node.titre}</h3>
           <p className={blogList__articleDate}>{edge.node.createdAt}</p>
         </header>
-        <Img
-          fixed={edge.node.photo.fixed}
+        <NonStretchedImage
+          fluid={edge.node.photo.fluid}
           alt={edge.node.photo.description}
           className={blogList__articleImage}
         />

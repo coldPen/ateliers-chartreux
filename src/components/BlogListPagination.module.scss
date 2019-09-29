@@ -6,7 +6,9 @@
     display: flex;
     justify-content: space-between;
 
-    &__button {
+    &__button,
+    &__button:link,
+    &__button:visited {
         font-family: $saira;
         text-decoration: none;
         color: #fff;
@@ -25,6 +27,14 @@
                 -webkit-background-clip: text;
                 -webkit-text-fill-color: transparent;
             }
+        }
+
+        &_prev {
+            justify-self: flex-start;
+        }
+
+        &_next {
+            justify-self: flex-end;
         }
     }
 

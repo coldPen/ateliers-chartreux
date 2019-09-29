@@ -4,6 +4,8 @@ import { Link } from "gatsby"
 import {
   pagination,
   pagination__button,
+  pagination__button_prev,
+  pagination__button_next,
   pagination__text,
 } from "./BlogListPagination.module.scss"
 
@@ -14,26 +16,25 @@ export default ({ pageContext }) => {
   const prevPage =
     currentPage - 1 === 1 ? `/` : `/blog/${(currentPage - 1).toString()}`
   const nextPage = `/blog/${(currentPage + 1).toString()}`
+  console.log(pagination)
   return (
     <nav className={pagination}>
       {!isFirst && (
-        <Link to={prevPage} rel="prev" className={pagination__button}>
+        <Link
+          to={prevPage}
+          rel="prev"
+          className={`${pagination__button} ${pagination__button_prev}`}
+        >
           <span className={pagination__text}>← Précédent</span>
         </Link>
       )}
 
-      {Array.from({ length: numPages }, (_, i) => (
-        <Link
-          key={`pagination-number${i + 1}`}
-          to={`/${i === 0 ? "" : `blog/${i + 1}`}`}
-          className={pagination__button}
-        >
-          <span className={pagination__text}>{i + 1}</span>
-        </Link>
-      ))}
-
       {!isLast && (
-        <Link to={nextPage} rel="next" className={pagination__button}>
+        <Link
+          to={nextPage}
+          rel="next"
+          className={`${pagination__button} ${pagination__button_next}`}
+        >
           <span className={pagination__text}>Suivant →</span>
         </Link>
       )}

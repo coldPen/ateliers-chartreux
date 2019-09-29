@@ -11,7 +11,9 @@
   //   grid-template-columns: repeat(4, 1fr);
   // }
 
-  &__article {
+  &__article,
+  &__article:link,
+  &__article:visited {
     background: $block-background;
     color: #fff;
     padding: 3rem;

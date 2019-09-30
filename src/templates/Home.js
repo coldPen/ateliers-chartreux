@@ -1,5 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
+import { Helmet } from "react-helmet"
 
 import Layout from "../components/Layout"
 import Intro from "../components/Intro"
@@ -13,6 +14,11 @@ export default ({ data, pageContext }) => {
   const isFirst = currentPage === 1
   return (
     <Layout>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Ateliers Chartreux à Marseille</title>
+        <link rel="canonical" href="https://ateliers-chartreux.fr/" />
+      </Helmet>
       {isFirst && <Intro />}
       <BlogList data={data} />
       <BlogListPagination pageContext={pageContext} />

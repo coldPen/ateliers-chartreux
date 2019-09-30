@@ -16,7 +16,6 @@ export default ({ pageContext }) => {
   const prevPage =
     currentPage - 1 === 1 ? `/` : `/blog/${(currentPage - 1).toString()}`
   const nextPage = `/blog/${(currentPage + 1).toString()}`
-  console.log(pagination)
   return (
     <nav className={pagination}>
       {!isFirst && (

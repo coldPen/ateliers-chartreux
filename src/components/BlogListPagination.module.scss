@@ -28,14 +28,18 @@
                 -webkit-text-fill-color: transparent;
             }
         }
+    }
 
-        &_prev {
-            justify-self: flex-start;
-        }
+    &__button_prev,
+    &__button_prev:link,
+    &__button_prev:visited {
+        margin-right: auto;
+    }
 
-        &_next {
-            justify-self: flex-end;
-        }
+    &__button_next,
+    &__button_next:link,
+    &__button_next:visited {
+        margin-left: auto;
     }
 
     &__text {

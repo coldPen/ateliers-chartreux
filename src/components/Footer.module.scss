@@ -1,0 +1,30 @@
+@import "../common";
+
+.footer {
+    display: flex;
+    justify-content: center;
+
+    padding: 3rem 10rem;
+
+    background: $block-background;
+
+    &__navigation {
+        width: 100%;
+
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__link,
+    &__link:link,
+    &__link:visited {
+        color: #fff;
+        font-size: 1.6rem;
+        font-family: $saira;
+        text-decoration: none;
+
+        &:hover {
+            @include text-gradient;
+        }
+    }
+}

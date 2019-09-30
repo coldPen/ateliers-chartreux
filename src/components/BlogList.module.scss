@@ -7,7 +7,7 @@
 
   padding: 3rem 10rem;
 
-  // @include min-width(large) {
+  // @include respond(large) {
   //   grid-template-columns: repeat(4, 1fr);
   // }
 
@@ -30,10 +30,7 @@
       }
 
       .blogList__articleTitle {
-        background: $link-gradient;
-        background-clip: border-box;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
+        @include text-gradient;
       }
 
       .blogList__articleImage {

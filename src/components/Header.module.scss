@@ -26,12 +26,8 @@
         position: relative;
         white-space: nowrap;
 
-        &:hover,
-        &:focus {
-            background: $link-gradient;
-            background-clip: border-box;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+        &:hover {
+            @include text-gradient;
         }
 
         // Bordures supérieures et inférieures des liens
@@ -58,9 +54,7 @@
         }
 
         &:hover:before,
-        &:focus:before,
-        &:hover:after,
-        &:focus:after {
+        &:hover:after {
             background: $link-gradient;
 
             transform: scaleX(1);

@@ -13,6 +13,10 @@
     column-count: 2;
     column-gap: 3rem;
     line-height: 1.6;
+
+    @include respond(medium) {
+      column-count: 1;
+    }
   }
 
   &__title {

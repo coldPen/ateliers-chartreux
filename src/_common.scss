@@ -14,19 +14,25 @@ $white-separation-border: 0.1rem solid rgba(#fff, 0.4);
 
 /* MIXINS */
 @mixin link-border($pos) {
-    position: absolute;
-    #{$pos}: 0;
-    left: 0;
-    right: 0;
-    height: 0.1rem;
-    margin: 0 auto;
-    content: "";
+  position: absolute;
+  #{$pos}: 0;
+  left: 0;
+  right: 0;
+  height: 0.1rem;
+  margin: 0 auto;
+  content: "";
+}
+
+@mixin text-gradient {
+  background: $link-gradient;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 // BREAKPOINT MANAGER
-@mixin min-width($breakpoint) {
+@mixin respond($breakpoint) {
 
-    /*
+  /*
     // 500px / 16px = 31.25em
     @if $breakpoint == small {
       @media only screen and (min-width: 31.25em) {
@@ -39,31 +45,37 @@ $white-separation-border: 0.1rem solid rgba(#fff, 0.4);
         @content;
       }
     }
-    */
-
-    // 1800px / 16px = 112.5em
-    @if $breakpoint == large {
-      @media only screen and (min-width: 112.5em) {
-        @content;
-      }
+      // 1800px / 16px = 112.5em
+  @if $breakpoint==large {
+    @media only screen and (min-width: 112.5em) {
+      @content;
     }
   }
+    */
+
+  // 1200px / 16px = 75em
+  @if $breakpoint==medium {
+    @media only screen and (max-width: 75em) {
+      @content;
+    }
+  }
+}
 
 /* LOAD LOCAL FONTS */
 @font-face {
-    font-family: "Rubik";
-    src: url("../fonts/Rubik/Rubik-Regular.ttf") format("truetype");
-    font-weight: 400;
+  font-family: "Rubik";
+  src: url("../fonts/Rubik/Rubik-Regular.ttf") format("truetype");
+  font-weight: 400;
 }
 
 @font-face {
-    font-family: "Saira";
-    src: url("../fonts/Saira/Saira-Regular.ttf") format("truetype");
-    font-weight: 400;
+  font-family: "Saira";
+  src: url("../fonts/Saira/Saira-Regular.ttf") format("truetype");
+  font-weight: 400;
 }
 
 @font-face {
-    font-family: "Saira";
-    src: url("../fonts/Saira/Saira-SemiBold.ttf") format("truetype");
-    font-weight: 600;
+  font-family: "Saira";
+  src: url("../fonts/Saira/Saira-SemiBold.ttf") format("truetype");
+  font-weight: 600;
 }

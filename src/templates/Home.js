@@ -16,7 +16,8 @@ export default ({ data, pageContext }) => {
     <Layout>
       <Helmet>
         <meta charSet="utf-8" />
-        <title>Ateliers Chartreux à Marseille</title>
+        <title></title>
+        <meta name="description" content="" />
         <link rel="canonical" href="https://ateliers-chartreux.fr/" />
       </Helmet>
       {isFirst && <Intro />}

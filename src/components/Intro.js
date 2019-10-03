@@ -21,6 +21,7 @@ export default () => {
       }
     }
   `)
+  console.log(!!data.contentfulAccueil.texte.childMarkdownRemark.html)
   return (
     <section className={intro}>
       <div className={intro__content}>

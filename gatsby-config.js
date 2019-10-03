@@ -8,7 +8,15 @@
 require("dotenv").config({ path: `.env` })
 
 module.exports = {
-  /* Your site config here */
+  siteMetadata: {
+    title: "Ateliers Chartreux",
+    titleTemplate: "%s · Ateliers Chartreux",
+    description:
+      "Hogwarts Potions master, Head of Slytherin house and former Death Eater.",
+    url: "https://www.doe.com", // No trailing slash allowed!
+    image: "/images/snape.jpg", // Path to your image you placed in the 'static' folder
+    twitterUsername: "@occlumency",
+  },
   plugins: [
     {
       resolve: `gatsby-source-contentful`,
@@ -19,6 +27,6 @@ module.exports = {
     },
     `gatsby-transformer-remark`,
     `gatsby-plugin-sass`,
-    `gatsby-plugin-react-helmet`
+    `gatsby-plugin-react-helmet`,
   ],
 }

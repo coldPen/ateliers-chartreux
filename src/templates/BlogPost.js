@@ -3,6 +3,7 @@ import { graphql } from "gatsby"
 
 import Layout from "../components/Layout"
 import NonStretchedImage from "../components/NonStretchedImage"
+import SEO from "../components/SEO"
 
 import "../reset.scss"
 
@@ -20,6 +21,15 @@ import {
 
 export default ({ data }) => (
   <Layout>
+    <SEO
+      title={data.contentfulPhotoPosts.titre}
+      description={
+        data.contentfulPhotoPosts.description.childMarkdownRemark.excerpt
+      }
+      image={data.contentfulPhotoPosts.photo.file.url}
+      pathname={`/blog/${data.contentfulPhotoPosts.slug}`}
+      article
+    />
     <article className={blogPost}>
       <header className={blogPost__header}>
         <h1 className={blogPost__title}>{data.contentfulPhotoPosts.titre}</h1>
@@ -40,8 +50,10 @@ export default ({ data }) => (
         ></div>
         <div className={blogPost__tags}>
           Tags :{" "}
-          {data.contentfulPhotoPosts.tags.map(tag => (
-            <span className={blogPost__tag}>{tag}</span>
+          {data.contentfulPhotoPosts.tags.map((tag, i) => (
+            <span className={blogPost__tag} key={i}>
+              {tag}
+            </span>
           ))}
         </div>
       </div>
@@ -57,12 +69,16 @@ export const query = graphql`
       tags
       photo {
         description
+        file {
+          url
+        }
         fluid(maxWidth: 903, maxHeight: 903) {
           ...GatsbyContentfulFluid
         }
       }
       description {
         childMarkdownRemark {
+          excerpt
           html
         }
       }

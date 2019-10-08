@@ -8,14 +8,14 @@
 require("dotenv").config({ path: `.env` })
 
 module.exports = {
+  // Default metadata (if needed)
   siteMetadata: {
-    title: "Ateliers Chartreux",
+    title: "Ateliers Chartreux à Marseille",
     titleTemplate: "%s · Ateliers Chartreux",
     description:
-      "Hogwarts Potions master, Head of Slytherin house and former Death Eater.",
-    url: "https://www.doe.com", // No trailing slash allowed!
-    image: "/images/snape.jpg", // Path to your image you placed in the 'static' folder
-    twitterUsername: "@occlumency",
+      "Site web des Ateliers Chartreux, atelier marseillais dédié à la fabrication numérique, à l'informatique et à l'audiovisuel.",
+    url: "https://ateliers-chartreux.fr", // No trailing slash allowed!
+    image: "/images/image.jpg", // Path to your image you placed in the 'static' folder
   },
   plugins: [
     {
@@ -28,5 +28,11 @@ module.exports = {
     `gatsby-transformer-remark`,
     `gatsby-plugin-sass`,
     `gatsby-plugin-react-helmet`,
+    {
+      resolve: `gatsby-plugin-react-helmet-canonical-urls`,
+      options: {
+        siteUrl: "https://ateliers-chartreux.fr",
+      },
+    },
   ],
 }

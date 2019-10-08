@@ -1,11 +1,11 @@
 import React from "react"
 import { graphql } from "gatsby"
-import { Helmet } from "react-helmet"
 
 import Layout from "../components/Layout"
 import Intro from "../components/Intro"
 import BlogList from "../components/BlogList"
 import BlogListPagination from "../components/BlogListPagination"
+import SEO from "../components/SEO"
 
 import "../reset.scss"
 
@@ -14,12 +14,7 @@ export default ({ data, pageContext }) => {
   const isFirst = currentPage === 1
   return (
     <Layout>
-      <Helmet>
-        <meta charSet="utf-8" />
-        <title></title>
-        <meta name="description" content="" />
-        <link rel="canonical" href="https://ateliers-chartreux.fr/" />
-      </Helmet>
+      <SEO />
       {isFirst && <Intro />}
       <BlogList data={data} />
       <BlogListPagination pageContext={pageContext} />

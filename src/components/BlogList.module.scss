@@ -3,13 +3,17 @@
 .blogList {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
-  grid-gap: 3rem;
+  grid-gap: $blog-grid-gap;
 
   padding: 3rem 10rem;
 
-  // @include respond(large) {
-  //   grid-template-columns: repeat(4, 1fr);
-  // }
+  @include respond(from-large) {
+    /* Doesn't work well with "text-overflow: ellipsis" in articleTitle: */
+    // grid-template-columns: repeat(4, 1fr);
+
+    /* Works well: */
+    grid-template-columns: repeat(4, calc((100% / 4) - (3 * $blog-grid-gap / 4)));
+  }
 
   &__article,
   &__article:link,

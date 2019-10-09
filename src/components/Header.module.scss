@@ -6,6 +6,8 @@
 
     padding: 0 10rem;
 
+    @include respond(to-medium) {}
+
     &__menu {
         width: 100%;
         height: 6rem;

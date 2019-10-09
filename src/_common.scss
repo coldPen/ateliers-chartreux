@@ -12,6 +12,9 @@ $block-background: rgba(#000, 0.25);
 $block-background-hovered: rgba(#000, 0.5);
 $white-separation-border: 0.1rem solid rgba(#fff, 0.4);
 
+// STANDARD DIMENSIONS
+$blog-grid-gap: 3rem;
+
 /* MIXINS */
 @mixin link-border($pos) {
   position: absolute;
@@ -32,30 +35,21 @@ $white-separation-border: 0.1rem solid rgba(#fff, 0.4);
 // BREAKPOINT MANAGER
 @mixin respond($breakpoint) {
 
-  /*
-    // 500px / 16px = 31.25em
-    @if $breakpoint == small {
-      @media only screen and (min-width: 31.25em) {
-        @content;
-      }
-    }
-    // 900px / 16px = 56.25em
-    @if $breakpoint == medium {
-      @media only screen and (min-width: 56.25em) {
-        @content;
-      }
-    }
-      // 1800px / 16px = 112.5em
-  @if $breakpoint==large {
-    @media only screen and (min-width: 112.5em) {
+  // Website was designed desktop first,
+  // on a screen with a width between 1200px and 1800px
+
+  // 1200px / 16px = 75em
+  @if $breakpoint==to-medium {
+    @media only screen and (max-width: 75em) {
       @content;
     }
   }
-    */
 
-  // 1200px / 16px = 75em
-  @if $breakpoint==medium {
-    @media only screen and (max-width: 75em) {
+  /* NORMAL DESKTOP WIDTH | No breakpoint */
+
+  // 1800px / 16px = 112.5em
+  @if $breakpoint==from-large {
+    @media only screen and (min-width: 112.5em) {
       @content;
     }
   }

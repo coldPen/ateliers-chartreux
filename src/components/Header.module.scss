@@ -9,12 +9,35 @@
     &__menu {
         width: 100%;
         height: 6rem;
+    }
+
+    &__list {
+        list-style-type: none;
+
         display: flex;
         justify-content: space-between;
         align-items: center;
 
         @include respond(to-medium) {
             flex-direction: column;
+        }
+    }
+
+    &__element {
+
+        width: 20rem;
+
+        &_left {
+            order: 1;
+        }
+
+        &_center {
+            order: 2;
+        }
+
+        &_right {
+            order: 3;
+            text-align: right;
         }
     }
 
@@ -29,6 +52,9 @@
 
         position: relative;
         white-space: nowrap;
+
+        width: 20rem;
+        text-align: center;
 
         &:hover {
             @include text-gradient;
@@ -66,6 +92,4 @@
             transition: all 0.2s ease-in-out;
         }
     }
-
-    &__logo {}
 }

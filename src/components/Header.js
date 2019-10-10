@@ -18,7 +18,7 @@ export default () => (
         Informatique
       </Link>
       <Link to="/" className={header__logo}>
-        <img src="https://via.placeholder.com/200x60" alt="" />
+        <img src="https://via.placeholder.com/200x60" alt="Ateliers Chartreux" />
       </Link>
       <Link to="/audiovisuel/" className={header__link}>
         Audiovisuel

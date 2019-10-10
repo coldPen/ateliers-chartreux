@@ -11,8 +11,8 @@
     /* Doesn't work well with "text-overflow: ellipsis" in articleTitle: */
     // grid-template-columns: repeat(4, 1fr);
 
-    /* Works well: */
-    grid-template-columns: repeat(4, calc((100% / 4) - (3 * $blog-grid-gap / 4)));
+    /* Works fine: */
+    grid-template-columns: repeat(4, calc((100% / 4) - (3 * #{$blog-grid-gap} / 4)));
   }
 
   &__article,

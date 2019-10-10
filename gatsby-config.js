@@ -34,5 +34,14 @@ module.exports = {
         siteUrl: "https://ateliers-chartreux.fr",
       },
     },
+    {
+      resolve: `gatsby-plugin-csp`,
+      options: {
+        // Next two properties overwritten because of gatsby-image
+        // https://bejamas.io/blog/content-security-policy-gatsby-websites/
+        mergeStyleHashes: false,
+        directives: { "style-src": "'self' 'unsafe-inline'" },
+      },
+    },
   ],
 }

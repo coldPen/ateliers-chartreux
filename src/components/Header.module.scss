@@ -6,9 +6,17 @@
 
     padding: 0 10rem;
 
-    &__menu {
+    &__nav {
         width: 100%;
         height: 6rem;
+    }
+
+    &__menuButton {
+        display: none;
+
+        @include respond(until-medium) {
+            display: block;
+        }
     }
 
     &__list {
@@ -18,13 +26,18 @@
         justify-content: space-between;
         align-items: center;
 
-        @include respond(to-medium) {
-            flex-direction: column;
+        @include respond(until-medium) {
+            display: none;
+
+            &_expanded {
+                display: flex;
+                flex-direction: column;
+            }
         }
+
     }
 
     &__element {
-
         width: 20rem;
 
         &_left {

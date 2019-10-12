@@ -14,7 +14,7 @@
     column-gap: 3rem;
     line-height: 1.6;
 
-    @include respond(to-medium) {
+    @include respond(until-medium) {
       column-count: 1;
     }
 

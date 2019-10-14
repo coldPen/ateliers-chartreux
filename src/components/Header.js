@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import { Link } from "gatsby"
 
 import {
@@ -18,9 +18,41 @@ import {
 export default () => {
   const [isMenuExpanded, toggleExpand] = useState(false)
 
+  const currentWidth = () =>
+    typeof window !== "undefined"
+      ? window.innerWidth
+      : typeof document !== "undefined"
+      ? document.documentElement.clientWidth ||
+        document.getElementsByTagName("body")[0].clientWidth
+      : 0
+
+  const [viewportWidth, setWidth] = useState(currentWidth())
+
+  useEffect(() => {
+    const updateWidth = () => {
+      setWidth(currentWidth())
+    }
+
+    // When component will mount and did mount
+    window.addEventListener("resize", updateWidth)
+
+    // When component will unmount
+    return () => {
+      window.removeEventListener("resize", updateWidth)
+    }
+  })
+
   return (
     <header className={header}>
       <nav className={header__nav}>
+        {viewportWidth <= 1200 ? (
+          <Link to="/" className={header__logo}>
+            <img
+              src="https://via.placeholder.com/200x60"
+              alt="Ateliers Chartreux"
+            />
+          </Link>
+        ) : null}
         <button
           aria-expanded={isMenuExpanded}
           aria-controls="menu"
@@ -35,14 +67,16 @@ export default () => {
           }`}
           id="menu"
         >
-          <li className={`${header__element} ${header__element_center}`}>
-            <Link to="/" className={header__logo}>
-              <img
-                src="https://via.placeholder.com/200x60"
-                alt="Ateliers Chartreux"
-              />
-            </Link>
-          </li>
+          {viewportWidth > 1200 ? (
+            <li className={`${header__element} ${header__element_center}`}>
+              <Link to="/" className={header__logo}>
+                <img
+                  src="https://via.placeholder.com/200x60"
+                  alt="Ateliers Chartreux"
+                />
+              </Link>
+            </li>
+          ) : null}
           <li className={`${header__element} ${header__element_left}`}>
             <Link to="/impression/" className={header__link}>
               Impression 2D/3D

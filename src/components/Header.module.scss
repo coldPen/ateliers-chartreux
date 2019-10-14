@@ -9,6 +9,12 @@
     &__nav {
         width: 100%;
         height: 6rem;
+
+        @include respond(until-medium) {
+            display: grid;
+            justify-content: space-between;
+            grid-template-columns: repeat(2, min-content);
+        }
     }
 
     &__menuButton {
@@ -16,6 +22,20 @@
 
         @include respond(until-medium) {
             display: block;
+
+            background: none;
+            border: none;
+            margin: 0;
+            padding: 0;
+            color: #fff;
+            font-family: $saira;
+            text-transform: uppercase;
+            font-size: 1.8rem;
+            cursor: pointer;
+
+            &:hover {
+                @include text-gradient;
+            }
         }
     }
 
@@ -30,8 +50,19 @@
             display: none;
 
             &_expanded {
+                z-index: 999;
+
+                position: absolute;
+                top: 6rem;
+                left: 0;
+                width: 100%;
+                height: calc(100vh - 6rem);
+
                 display: flex;
                 flex-direction: column;
+                justify-content: space-around;
+
+                background: $page-gradient;
             }
         }
 
@@ -42,6 +73,10 @@
 
         &_left {
             order: 1;
+
+            @include respond(until-medium) {
+                text-align: center;
+            }
         }
 
         &_center {
@@ -51,6 +86,10 @@
         &_right {
             order: 3;
             text-align: right;
+
+            @include respond(until-medium) {
+                text-align: center;
+            }
         }
     }
 

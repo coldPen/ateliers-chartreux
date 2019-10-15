@@ -14,6 +14,8 @@
             display: grid;
             justify-content: space-between;
             grid-template-columns: repeat(2, min-content);
+
+            position: relative;
         }
     }
 
@@ -33,9 +35,9 @@
             font-size: 1.8rem;
             cursor: pointer;
 
-            &:hover {
-                @include text-gradient;
-            }
+            // &:hover {
+            //     @include text-gradient;
+            // }
         }
     }
 
@@ -54,9 +56,7 @@
 
                 position: absolute;
                 top: 6rem;
-                left: 0;
-                width: 100%;
-                height: calc(100vh - 6rem);
+                right: 0;
 
                 display: flex;
                 flex-direction: column;
@@ -75,7 +75,7 @@
             order: 1;
 
             @include respond(until-medium) {
-                text-align: center;
+                text-align: right;
             }
         }
 
@@ -86,10 +86,6 @@
         &_right {
             order: 3;
             text-align: right;
-
-            @include respond(until-medium) {
-                text-align: center;
-            }
         }
     }
 
@@ -113,7 +109,7 @@
         }
 
         // Bordures supérieures et inférieures des liens
-        &:before {
+        &::before {
             @include link-border(top);
 
             background: #fff;
@@ -124,7 +120,7 @@
             transition: transform 0.2s ease-in-out;
         }
 
-        &:after {
+        &::after {
             @include link-border(bottom);
 
             background: #fff;
@@ -135,8 +131,8 @@
             transition: transform 0.2s ease-in-out;
         }
 
-        &:hover:before,
-        &:hover:after {
+        &:hover::before,
+        &:hover::after {
             background: $link-gradient;
 
             transform: scaleX(1);

@@ -7,6 +7,10 @@
 
   padding: 3rem 10rem 1.5rem;
 
+  @include respond(until-medium) {
+    padding: 3rem 6rem 1.5rem;
+  }
+
   @include respond(from-large) {
     /* Doesn't work well with "text-overflow: ellipsis" in articleTitle: */
     // grid-template-columns: repeat(4, 1fr);

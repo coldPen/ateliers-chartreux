@@ -6,6 +6,10 @@
 
     padding: 3rem 10rem;
 
+    @include respond(until-medium) {
+        padding: 3rem 6rem;
+    }
+
     background: $block-background;
 
     &__navigation {

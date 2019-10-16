@@ -39,8 +39,23 @@ $blog-grid-gap: 1.5rem;
   // Website was designed desktop first,
   // on a screen with a width between 1200px and 1800px
 
-  // Until 1200px / 16px = 75em
+
+  // Until 600px / 16px = 37.5em
+  @if $breakpoint==until-small {
+    @media only screen and (max-width: 37.5em) {
+      @content;
+    }
+  }
+
+  // Until 900px / 16px = 56.25em
   @if $breakpoint==until-medium {
+    @media only screen and (max-width: 56.25em) {
+      @content;
+    }
+  }
+
+  // Until 1200px / 16px = 75em
+  @if $breakpoint==until-normal {
     @media only screen and (max-width: 75em) {
       @content;
     }

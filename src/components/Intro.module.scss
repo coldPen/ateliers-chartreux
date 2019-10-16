@@ -8,13 +8,17 @@
   background: rgba(#000, 0.25);
   color: #fff;
 
+  @include respond(until-medium) {
+    padding: 3rem 6rem;
+  }
+
   &__content {
     width: 100%;
     column-count: 2;
     column-gap: 3rem;
     line-height: 1.6;
 
-    @include respond(until-medium) {
+    @include respond(until-normal) {
       column-count: 1;
     }
 

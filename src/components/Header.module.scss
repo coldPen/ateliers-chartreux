@@ -23,7 +23,8 @@
         display: none;
 
         @include respond(until-medium) {
-            display: block;
+            display: flex;
+            align-items: center;
 
             background: none;
             border: none;
@@ -35,9 +36,9 @@
             font-size: 1.8rem;
             cursor: pointer;
 
-            // &:hover {
-            //     @include text-gradient;
-            // }
+            &:hover {
+                opacity: 0.7;
+            }
         }
     }
 
@@ -58,11 +59,14 @@
                 top: 6rem;
                 right: 0;
 
+                padding: 2rem 2rem;
+
                 display: flex;
                 flex-direction: column;
                 justify-content: space-around;
+                align-items: flex-end;
 
-                background: $page-gradient;
+                background: $mobile-navigation-background;
             }
         }
 
@@ -71,12 +75,16 @@
     &__element {
         width: 20rem;
 
+        @include respond(until-medium) {
+            width: min-content;
+
+            &:not(:last-child) {
+                margin-bottom: 1.6rem;
+            }
+        }
+
         &_left {
             order: 1;
-
-            @include respond(until-medium) {
-                text-align: right;
-            }
         }
 
         &_center {

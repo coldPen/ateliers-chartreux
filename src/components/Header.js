@@ -1,5 +1,7 @@
-import React, { useState, useEffect } from "react"
+import React, { useRef, useState, useEffect } from "react"
 import { Link } from "gatsby"
+
+import Hamburger from "./Hamburger"
 
 import {
   header,
@@ -16,8 +18,10 @@ import {
 } from "./Header.module.scss"
 
 export default () => {
-  const [isMenuExpanded, toggleExpand] = useState(false)
+  // Menu expand state
+  const [menuIsExpanded, toggleExpand] = useState(false)
 
+  // Get current width
   const currentWidth = () =>
     typeof window !== "undefined"
       ? window.innerWidth
@@ -25,20 +29,40 @@ export default () => {
       ? document.documentElement.clientWidth ||
         document.getElementsByTagName("body")[0].clientWidth
       : 0
-
+  // Updated width state
   const [viewportWidth, setWidth] = useState(currentWidth())
 
-  useEffect(() => {
-    const updateWidth = () => {
-      setWidth(currentWidth())
+  const updateWidth = () => {
+    setWidth(currentWidth())
+  }
+
+  // Wrapper that detects outside clicks (for the mobile menu)
+  const buttonRef = useRef(null)
+  const menuRef = useRef(null)
+
+  const handleClickOutside = event => {
+    if (
+      menuIsExpanded &&
+      buttonRef.current &&
+      menuRef.current &&
+      !buttonRef.current.contains(event.target) &&
+      !menuRef.current.contains(event.target)
+    ) {
+      toggleExpand()
     }
+  }
 
-    // When component will mount and did mount
+  useEffect(() => {
+    /* When component will mount and did mount */
+    // Listen to the resize event
     window.addEventListener("resize", updateWidth)
+    // Listen to outside-of-mobile-menu clicks
+    document.addEventListener("mousedown", handleClickOutside)
 
-    // When component will unmount
+    /* When component will unmount */
     return () => {
       window.removeEventListener("resize", updateWidth)
+      document.removeEventListener("mousedown", handleClickOutside)
     }
   })
 
@@ -54,18 +78,20 @@ export default () => {
           </Link>
         ) : null}
         <button
-          aria-expanded={isMenuExpanded}
+          aria-expanded={menuIsExpanded}
           aria-controls="menu"
           className={header__menuButton}
-          onClick={() => toggleExpand(!isMenuExpanded)}
+          onClick={() => toggleExpand(!menuIsExpanded)}
+          ref={buttonRef}
         >
-          Menu
+          Menu <Hamburger isActive={menuIsExpanded} />
         </button>
         <ul
           className={`${header__list}${
-            isMenuExpanded ? ` ${header__list_expanded}` : ``
+            menuIsExpanded ? ` ${header__list_expanded}` : ``
           }`}
           id="menu"
+          ref={menuRef}
         >
           {viewportWidth > 1200 ? (
             <li className={`${header__element} ${header__element_center}`}>

@@ -97,7 +97,7 @@ export default () => {
             <li className={`${header__element} ${header__element_center}`}>
               <Link to="/" className={header__logo}>
                 <img
-                  src="https://via.placeholder.com/200x60"
+                  src="https://via.placeholder.com/240x72"
                   alt="Ateliers Chartreux"
                 />
               </Link>

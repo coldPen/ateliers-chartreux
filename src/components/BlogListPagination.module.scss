@@ -11,6 +11,10 @@
         padding: 0 6rem 3rem;
     }
 
+    @include respond(until-small-1) {
+        padding: 0 2rem 3rem;
+    }
+
     display: flex;
     justify-content: space-between;
 

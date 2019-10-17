@@ -16,13 +16,17 @@
     padding: 3rem 6rem;
   }
 
+  @include respond(until-small-1) {
+    padding: 3rem 2rem;
+  }
+
   &__content {
     width: 100%;
     column-count: 2;
     column-gap: 3rem;
     line-height: 1.6;
 
-    @include respond(until-normal) {
+    @include respond(until-small-2) {
       column-count: 1;
     }
 

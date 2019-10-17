@@ -13,9 +13,6 @@ $block-background-hovered: rgba(#000, 0.5);
 $mobile-navigation-background: #232526;
 $white-separation-border: 0.1rem solid rgba(#fff, 0.4);
 
-// STANDARD DIMENSIONS
-$blog-grid-gap: 1.5rem;
-
 /* MIXINS */
 @mixin link-border($pos) {
   position: absolute;
@@ -39,6 +36,12 @@ $blog-grid-gap: 1.5rem;
   // Website was designed desktop first,
   // on a screen with a width between 1200px and 1800px
 
+  // Until 400px / 16px = 25em
+  @if $breakpoint==until-tiny {
+    @media only screen and (max-width: 25em) {
+      @content;
+    }
+  }
 
   // Until 600px / 16px = 37.5em
   @if $breakpoint==until-small-1 {

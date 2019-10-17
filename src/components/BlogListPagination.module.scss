@@ -3,6 +3,10 @@
 .pagination {
     padding: 0 10rem 3rem;
 
+    @include respond(until-normal) {
+        padding: 0 8rem 3rem;
+    }
+
     @include respond(until-medium) {
         padding: 0 6rem 3rem;
     }

@@ -6,6 +6,10 @@
 
     padding: 0 10rem;
 
+    @include respond(until-normal) {
+        padding: 0 8rem;
+    }
+
     @include respond(until-medium) {
         padding: 0 6rem;
     }

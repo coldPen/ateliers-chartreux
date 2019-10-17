@@ -41,8 +41,15 @@ $blog-grid-gap: 1.5rem;
 
 
   // Until 600px / 16px = 37.5em
-  @if $breakpoint==until-small {
+  @if $breakpoint==until-small-1 {
     @media only screen and (max-width: 37.5em) {
+      @content;
+    }
+  }
+
+  // Until 800px / 16px = 50em
+  @if $breakpoint==until-small-2 {
+    @media only screen and (max-width: 50em) {
       @content;
     }
   }

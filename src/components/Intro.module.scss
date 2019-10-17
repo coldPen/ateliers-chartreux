@@ -8,6 +8,10 @@
   background: rgba(#000, 0.25);
   color: #fff;
 
+  @include respond(until-normal) {
+    padding: 3rem 8rem;
+  }
+
   @include respond(until-medium) {
     padding: 3rem 6rem;
   }

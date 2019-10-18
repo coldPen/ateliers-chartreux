@@ -48,7 +48,7 @@ export default () => {
       !buttonRef.current.contains(event.target) &&
       !menuRef.current.contains(event.target)
     ) {
-      toggleExpand()
+      toggleExpand(!menuIsExpanded)
     }
   }
 

@@ -18,6 +18,7 @@
         padding: 3rem 2rem;
     }
 
+
     background: $block-background;
 
     &__navigation {
@@ -25,18 +26,49 @@
 
         display: flex;
         justify-content: space-between;
-    }
 
-    &__link,
-    &__link:link,
-    &__link:visited {
-        color: #fff;
-        font-size: 1.6rem;
-        font-family: $saira;
-        text-decoration: none;
-
-        &:hover {
-            @include text-gradient;
+        @include respond(until-tiny) {
+            display: grid;
+            grid-template-areas:
+                "logo link1"
+                "logo link2";
         }
     }
+
+    &__logo {
+        grid-area: logo;
+    }
+
+    &__link {
+
+        @include respond(until-tiny) {
+            &_1 {
+                grid-area: link1;
+            }
+
+            &_2 {
+                grid-area: link2;
+            }
+        }
+
+        &,
+        &:link,
+        &:visited {
+            color: #fff;
+            font-size: 1.6rem;
+            font-family: $saira;
+            text-decoration: none;
+
+            @include respond(until-tiny) {
+                text-align: right;
+            }
+
+            &:hover {
+                @include text-gradient;
+            }
+        }
+
+    }
+
+
 }

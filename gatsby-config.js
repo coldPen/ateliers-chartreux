@@ -40,7 +40,10 @@ module.exports = {
         // Next two properties overwritten because of gatsby-image
         // https://bejamas.io/blog/content-security-policy-gatsby-websites/
         mergeStyleHashes: false,
-        directives: { "style-src": "'self' 'unsafe-inline'" },
+        directives: {
+          "style-src": "'self' 'unsafe-inline'",
+          "img-src": "'self' data: https://images.ctfassets.net/",
+        },
       },
     },
   ],

@@ -1,0 +1,26 @@
+@import "../common";
+
+.form {
+    // background-color: $block-background;
+    // padding: 3rem 10rem;
+
+    // @include respond(until-normal) {
+    //     padding: 3rem 8rem;
+    // }
+
+    // @include respond(until-medium) {
+    //     padding: 3rem 6rem;
+    // }
+
+    // @include respond(until-small-1) {
+    //     padding: 3rem 2rem;
+    // }
+
+    &__container {}
+
+    &__input {}
+
+    &__message {}
+
+    &__submit {}
+}

@@ -42,7 +42,8 @@ module.exports = {
         mergeStyleHashes: false,
         directives: {
           "style-src": "'self' 'unsafe-inline'",
-          "img-src": "'self' data: https://images.ctfassets.net/",
+          "img-src":
+            "'self' data: https://images.ctfassets.net/ https://via.placeholder.com/",
         },
       },
     },

@@ -19,25 +19,25 @@ import {
 
 export default () => {
   // Menu expand state
-  const [menuIsExpanded, toggleExpand] = useState(false)
+  const [menuIsExpanded, setExpand] = useState(false)
 
   // Get current width
-  const currentWidth = () => {
-    const width =
+  const getWidthType = () => {
+    const currentWidth =
       typeof window !== "undefined"
         ? window.innerWidth
         : typeof document !== "undefined"
         ? document.documentElement.clientWidth ||
           document.getElementsByTagName("body")[0].clientWidth
         : 0
-    console.log(width)
-    return width
+    return currentWidth > 1200
   }
-  // Updated width state
-  const [viewportWidth, setWidth] = useState(currentWidth())
 
-  const updateWidth = () => {
-    setWidth(currentWidth())
+  // Updated width type state
+  const [isWidthNormal, setWidthType] = useState(getWidthType())
+
+  const updateWidthType = () => {
+    setWidthType(getWidthType())
   }
 
   // Wrapper that detects outside clicks (for the mobile menu)
@@ -52,20 +52,20 @@ export default () => {
       !buttonRef.current.contains(event.target) &&
       !menuRef.current.contains(event.target)
     ) {
-      toggleExpand(!menuIsExpanded)
+      setExpand(!menuIsExpanded)
     }
   }
 
   useEffect(() => {
     /* When component will mount and did mount */
     // Listen to the resize event
-    window.addEventListener("resize", updateWidth)
+    window.addEventListener("resize", updateWidthType)
     // Listen to outside-of-mobile-menu clicks
     document.addEventListener("mousedown", handleClickOutside)
 
     /* When component will unmount */
     return () => {
-      window.removeEventListener("resize", updateWidth)
+      window.removeEventListener("resize", updateWidthType)
       document.removeEventListener("mousedown", handleClickOutside)
     }
   })
@@ -73,19 +73,19 @@ export default () => {
   return (
     <header className={header}>
       <nav className={header__nav}>
-        {viewportWidth <= 1200 ? (
+        {isWidthNormal ? null : (
           <Link to="/" className={header__logo}>
             <img
               src="https://via.placeholder.com/240x72"
               alt="Ateliers Chartreux"
             />
           </Link>
-        ) : null}
+        )}
         <button
           aria-expanded={menuIsExpanded}
           aria-controls="menu"
           className={header__menuButton}
-          onClick={() => toggleExpand(!menuIsExpanded)}
+          onClick={() => setExpand(!menuIsExpanded)}
           ref={buttonRef}
         >
           Menu <Hamburger isActive={menuIsExpanded} />
@@ -97,7 +97,7 @@ export default () => {
           id="menu"
           ref={menuRef}
         >
-          {viewportWidth > 1200 ? (
+          {isWidthNormal ? (
             <li className={`${header__element} ${header__element_center}`}>
               <Link to="/" className={header__logo}>
                 <img

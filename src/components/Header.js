@@ -21,8 +21,8 @@ export default () => {
   // Menu expand state
   const [menuIsExpanded, setExpand] = useState(false)
 
-  // Get current width
-  const getWidthType = () => {
+  // Get current width and return a boolean
+  const getWidthBool = () => {
     const currentWidth =
       typeof window !== "undefined"
         ? window.innerWidth
@@ -30,14 +30,15 @@ export default () => {
         ? document.documentElement.clientWidth ||
           document.getElementsByTagName("body")[0].clientWidth
         : 0
+    console.log(currentWidth > 1200)
     return currentWidth > 1200
   }
 
   // Updated width type state
-  const [isWidthNormal, setWidthType] = useState(getWidthType())
+  const [isWidthNormal, setWidthBool] = useState(getWidthBool())
 
-  const updateWidthType = () => {
-    setWidthType(getWidthType())
+  const updateWidthBool = () => {
+    setWidthBool(getWidthBool())
   }
 
   // Wrapper that detects outside clicks (for the mobile menu)
@@ -59,13 +60,13 @@ export default () => {
   useEffect(() => {
     /* When component will mount and did mount */
     // Listen to the resize event
-    window.addEventListener("resize", updateWidthType)
+    window.addEventListener("resize", updateWidthBool)
     // Listen to outside-of-mobile-menu clicks
     document.addEventListener("mousedown", handleClickOutside)
 
     /* When component will unmount */
     return () => {
-      window.removeEventListener("resize", updateWidthType)
+      window.removeEventListener("resize", updateWidthBool)
       document.removeEventListener("mousedown", handleClickOutside)
     }
   })

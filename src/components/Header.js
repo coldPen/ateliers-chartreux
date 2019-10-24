@@ -22,13 +22,17 @@ export default () => {
   const [menuIsExpanded, toggleExpand] = useState(false)
 
   // Get current width
-  const currentWidth = () =>
-    typeof window !== "undefined"
-      ? window.innerWidth
-      : typeof document !== "undefined"
-      ? document.documentElement.clientWidth ||
-        document.getElementsByTagName("body")[0].clientWidth
-      : 0
+  const currentWidth = () => {
+    const width =
+      typeof window !== "undefined"
+        ? window.innerWidth
+        : typeof document !== "undefined"
+        ? document.documentElement.clientWidth ||
+          document.getElementsByTagName("body")[0].clientWidth
+        : 0
+    console.log(width)
+    return width
+  }
   // Updated width state
   const [viewportWidth, setWidth] = useState(currentWidth())
 

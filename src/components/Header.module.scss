@@ -22,7 +22,6 @@
         display: grid;
         height: 6rem;
         width: 100%;
-        // grid-template-rows: 6rem;
         grid-template-columns: 1fr min-content 1fr;
 
         position: relative;
@@ -68,9 +67,6 @@
         grid-template-columns: repeat(5, 1fr);
         align-content: center;
         height: 6rem;
-        // display: flex;
-        // justify-content: space-between;
-        // align-items: center;
 
         @include respond(until-normal) {
             display: none;

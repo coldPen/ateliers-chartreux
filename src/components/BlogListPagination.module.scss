@@ -46,12 +46,14 @@
     &__button_prev:link,
     &__button_prev:visited {
         margin-right: auto;
+        @include block-corners-to-left(0.8rem);
     }
 
     &__button_next,
     &__button_next:link,
     &__button_next:visited {
         margin-left: auto;
+        @include block-corners-to-right(0.8rem);
     }
 
     &__text {

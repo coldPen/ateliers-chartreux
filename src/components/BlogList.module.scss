@@ -36,6 +36,7 @@
   &__article:link,
   &__article:visited {
     background: $block-background;
+    @include block-corners(1.6rem);
     color: #fff;
     padding: 3rem;
 

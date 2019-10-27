@@ -47,7 +47,7 @@ export default ({ data }) => (
             __html:
               data.contentfulPhotoPosts.description.childMarkdownRemark.html,
           }}
-        ></div>
+        />
         <div className={blogPost__tags}>
           Tags :{" "}
           {data.contentfulPhotoPosts.tags.map((tag, i) => (

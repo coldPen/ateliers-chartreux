@@ -24,6 +24,42 @@ $white-separation-border: 0.1rem solid rgba(#fff, 0.4);
   content: "";
 }
 
+@mixin block-corners($corners-size) {
+  clip-path: polygon(
+    /* top left */
+    0 $corners-size, $corners-size 0,
+    /* top right */
+    calc(100% - #{$corners-size}) 0, 100% $corners-size,
+    /* bottom right */
+    100% calc(100% - #{$corners-size}), calc(100% - #{$corners-size}) 100%,
+    /* bottom left */
+    $corners-size 100%, 0 calc(100% - #{$corners-size}));
+}
+
+@mixin block-corners-to-right($corners-size) {
+  clip-path: polygon(
+    /* top left */
+    0% $corners-size, $corners-size 0%,
+    /* top right */
+    100% 0,
+    /* bottom right */
+    100% calc(100% - #{$corners-size}), calc(100% - #{$corners-size}) 100%,
+    /* bottom left */
+    0 100%);
+}
+
+@mixin block-corners-to-left($corners-size) {
+  clip-path: polygon(
+    /* top left */
+    0 0,
+    /* top right */
+    calc(100% - #{$corners-size}) 0, 100% $corners-size,
+    /* bottom right */
+    100% 100%,
+    /* bottom left */
+    $corners-size 100%, 0 calc(100% - #{$corners-size}));
+}
+
 @mixin text-gradient {
   background: $link-gradient;
   background-clip: text;

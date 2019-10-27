@@ -9,6 +9,7 @@ import "../reset.scss"
 export default () => (
   <Layout>
     <SEO />
+    <section></section>
     <ContactForm />
   </Layout>
 )

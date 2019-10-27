@@ -1,26 +1,69 @@
 @import "../common";
 
 .form {
-    // background-color: $block-background;
-    // padding: 3rem 10rem;
+    color: #fff;
 
-    // @include respond(until-normal) {
-    //     padding: 3rem 8rem;
-    // }
+    padding: 3rem 10rem;
 
-    // @include respond(until-medium) {
-    //     padding: 3rem 6rem;
-    // }
+    @include respond(until-normal) {
+        padding: 3rem 8rem;
+    }
 
-    // @include respond(until-small-1) {
-    //     padding: 3rem 2rem;
-    // }
+    @include respond(until-medium) {
+        padding: 3rem 6rem;
+    }
 
-    &__container {}
+    @include respond(until-small-1) {
+        padding: 3rem 2rem;
+    }
 
-    &__input {}
+    &__container {
+        background: $block-background;
+        @include block-corners(1.6rem);
+        padding: 2rem 3rem;
 
-    &__message {}
+        // display: grid;
+        // grid-template-columns: 1fr 2fr;
+    }
+
+    &__title {
+        font-family: $saira;
+
+        &_1 {
+            font-size: 3rem;
+            margin-bottom: 2rem;
+            grid-column: 1 / 3;
+        }
+    }
+
+    &__section {}
+
+    &__selectGroup {
+        font-family: $rubik;
+
+        display: flex;
+        flex-direction: column;
+
+        margin-bottom: 2rem;
+    }
+
+    &__inputGroup {
+        font-family: $rubik;
+
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__messageGroup {
+        font-family: $rubik;
+
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__label {
+        font-size: 1.8rem;
+    }
 
     &__submit {}
 }

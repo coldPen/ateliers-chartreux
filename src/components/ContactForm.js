@@ -5,13 +5,17 @@ import {
   form,
   form__title,
   form__title_1,
-  form__title_2,
   form__container,
-  form__section,
-  form__selectGroup,
+  form__metadata,
+  form__message,
   form__inputGroup,
+  form__inputGroup_recipient,
+  form__inputGroup_sender,
+  form__inputGroup_senderEmail,
+  form__inputGroup_message,
   form__label,
-  form__messageGroup,
+  form__input,
+  form__textarea,
   form__submit,
 } from "./ContactForm.module.scss"
 
@@ -52,16 +56,17 @@ export default () => {
       <form className={form__container} method="post" action={formAction}>
         <h2 className={`${form__title} ${form__title_1}`}>Nous contacter</h2>
 
-        <section className={form__section}>
-          <div className={form__selectGroup}>
-            <label className={form__label} htmlFor="dest-select">
-              Destinataire
+        <div className={form__metadata}>
+          <div className={`${form__inputGroup} ${form__inputGroup_recipient}`}>
+            <label className={form__label} htmlFor="recipient-select">
+              Destinataire du message
             </label>
             <select
+              className={form__input}
               value={recipient}
               onChange={setRecipientState}
               name="destinataires"
-              id="dest-select"
+              id="recipient-select"
             >
               {data.allContentfulDestinataires.edges.map((edge, i) => (
                 <option value={edge.node.slug} key={i}>
@@ -70,36 +75,54 @@ export default () => {
               ))}
             </select>
           </div>
-        </section>
 
-        <section className={form__section}>
-          <div className={form__inputGroup}>
+          <div className={`${form__inputGroup} ${form__inputGroup_sender}`}>
             <label className={form__label} htmlFor="name">
-              Prénom & nom
+              Votre nom
             </label>
-            <input type="text" name="name" id="name" required />
+            <input
+              className={form__input}
+              type="text"
+              name="name"
+              id="name"
+              required
+            />
           </div>
 
-          <div className={form__inputGroup}>
+          <div
+            className={`${form__inputGroup} ${form__inputGroup_senderEmail}`}
+          >
             <label className={form__label} htmlFor="email">
-              Email
+              Votre email
             </label>
-            <input type="email" name="_replyto" id="email" required />
+            <input
+              className={form__input}
+              type="email"
+              name="_replyto"
+              id="email"
+              required
+            />
           </div>
-        </section>
+        </div>
 
-        <section className={form__section}>
-          <div className={form__messageGroup}>
+        <div className={form__message}>
+          <div className={`${form__inputGroup} ${form__inputGroup_message}`}>
             <label className={form__label} htmlFor="message">
               Message
             </label>
-            <textarea rows="5" name="message" id="message" required />
+            <textarea
+              className={form__textarea}
+              rows="5"
+              name="message"
+              id="message"
+              required
+            />
           </div>
-        </section>
+
+          <input className={form__submit} type="submit" value="Envoyer" />
+        </div>
 
         <input type="text" name="_gotcha" style={{ display: "none" }} />
-
-        <input className={form__submit} type="submit" value="Envoyer" />
       </form>
     </section>
   )

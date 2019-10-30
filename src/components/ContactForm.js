@@ -4,17 +4,16 @@ import { graphql, useStaticQuery } from "gatsby"
 import {
   form,
   form__title,
-  form__title_1,
   form__container,
-  form__metadata,
-  form__message,
-  form__inputGroup,
-  form__inputGroup_recipient,
-  form__inputGroup_sender,
-  form__inputGroup_senderEmail,
-  form__inputGroup_message,
+  form__metadataCol,
+  form__messageCol,
+  form__recipientGroup,
+  form__nameGroup,
+  form__emailGroup,
+  form__textareaGroup,
   form__label,
   form__input,
+  form__select,
   form__textarea,
   form__submit,
 } from "./ContactForm.module.scss"
@@ -54,15 +53,15 @@ export default () => {
   return (
     <section className={form}>
       <form className={form__container} method="post" action={formAction}>
-        <h2 className={`${form__title} ${form__title_1}`}>Nous contacter</h2>
+        <h2 className={form__title}>Nous contacter</h2>
 
-        <div className={form__metadata}>
-          <div className={`${form__inputGroup} ${form__inputGroup_recipient}`}>
+        <div className={form__metadataCol}>
+          <div className={form__recipientGroup}>
             <label className={form__label} htmlFor="recipient-select">
               Destinataire du message
             </label>
             <select
-              className={form__input}
+              className={form__select}
               value={recipient}
               onChange={setRecipientState}
               name="destinataires"
@@ -76,7 +75,7 @@ export default () => {
             </select>
           </div>
 
-          <div className={`${form__inputGroup} ${form__inputGroup_sender}`}>
+          <div className={form__nameGroup}>
             <label className={form__label} htmlFor="name">
               Votre nom
             </label>
@@ -89,9 +88,7 @@ export default () => {
             />
           </div>
 
-          <div
-            className={`${form__inputGroup} ${form__inputGroup_senderEmail}`}
-          >
+          <div className={form__emailGroup}>
             <label className={form__label} htmlFor="email">
               Votre email
             </label>
@@ -105,19 +102,17 @@ export default () => {
           </div>
         </div>
 
-        <div className={form__message}>
-          <div className={`${form__inputGroup} ${form__inputGroup_message}`}>
-            <label className={form__label} htmlFor="message">
-              Message
-            </label>
-            <textarea
-              className={form__textarea}
-              rows="5"
-              name="message"
-              id="message"
-              required
-            />
-          </div>
+        <div className={form__messageCol}>
+          <label className={form__label} htmlFor="message">
+            Message
+          </label>
+          <textarea
+            className={form__textarea}
+            // rows="12"
+            name="message"
+            id="message"
+            required
+          />
 
           <input className={form__submit} type="submit" value="Envoyer" />
         </div>

@@ -17,11 +17,8 @@ export default () => (
       <Link to="/" className={footer__logo}>
         Ateliers Chartreux
       </Link>
-      <Link
-        to="/infos-pratiques/"
-        className={`${footer__link} ${footer__link_1}`}
-      >
-        Infos pratiques
+      <Link to="/contact/" className={`${footer__link} ${footer__link_1}`}>
+        Contact | Infos pratiques
       </Link>
       <Link
         to="/mentions-legales/"

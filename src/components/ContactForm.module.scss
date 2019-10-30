@@ -67,6 +67,10 @@
 
         display: grid;
         grid-template-rows: min-content 40vh min-content;
+
+        @include respond(until-normal) {
+            grid-template-rows: min-content 40rem min-content;
+        }
     }
 
     // label + [select || input || textarea] groups
@@ -130,10 +134,6 @@
             display: none;
         }
 
-        &:hover {
-            border-color: #888;
-        }
-
         &>option {
             font-weight: 400;
             color: $white-background-text;
@@ -157,12 +157,16 @@
 
         cursor: pointer;
 
-        transition: all 0.2s;
+        transition: color 0.2s;
 
         &:hover {
-            background: $link-gradient;
+            background: $orange-gradient;
             color: $dark-1;
             z-index: 999;
+
+            border: none;
+
+            padding: 1.1rem 2rem;
         }
     }
 }

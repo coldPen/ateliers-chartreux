@@ -10,7 +10,6 @@ import {
   form__recipientGroup,
   form__nameGroup,
   form__emailGroup,
-  form__textareaGroup,
   form__label,
   form__input,
   form__select,
@@ -108,7 +107,6 @@ export default () => {
           </label>
           <textarea
             className={form__textarea}
-            // rows="12"
             name="message"
             id="message"
             required

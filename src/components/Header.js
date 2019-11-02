@@ -3,6 +3,8 @@ import { Link } from "gatsby"
 
 import Hamburger from "./Hamburger"
 
+import logo from "../../static/images/logo.png"
+
 import {
   header,
   header__nav,
@@ -53,10 +55,7 @@ export default () => {
     <header className={header}>
       <nav className={header__nav}>
         <Link to="/" className={header__logo}>
-          <img
-            src="https://via.placeholder.com/240x72"
-            alt="Ateliers Chartreux"
-          />
+          <img src={logo} alt="Ateliers Chartreux" />
         </Link>
         <button
           aria-expanded={menuIsExpanded}

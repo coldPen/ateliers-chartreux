@@ -30,6 +30,7 @@
     &__transports {
         font-family: $rubik;
         font-size: 1.8rem;
+        text-align: center;
     }
 
     &__data {
@@ -41,7 +42,6 @@
         &>* {
             font-family: $rubik;
             font-size: 1.8rem;
-            text-align: center;
 
             &>a,
             &>a:link,

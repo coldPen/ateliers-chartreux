@@ -38,6 +38,9 @@ const SEO = ({ title, description, image, pathname, article }) => (
 
       return (
         <Helmet
+          htmlAttributes={{
+            lang: "fr",
+          }}
           title={seo.title}
           titleTemplate={seo.title === defaultTitle ? null : titleTemplate}
         >
@@ -47,11 +50,7 @@ const SEO = ({ title, description, image, pathname, article }) => (
 
           {/* Open Graph */}
           <meta property="og:url" content={seo.url} />
-          {article ? (
-            <meta property="og:type" content="article" />
-          ) : (
-            <meta property="og:type" content="website" />
-          )}
+          <meta property="og:type" content={article ? "article" : "website"} />
           <meta property="og:title" content={seo.title} />
           <meta property="og:description" content={seo.description} />
           <meta property="og:image" content={seo.image} />

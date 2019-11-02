@@ -17,7 +17,12 @@ import {
 
 export default () => (
   <Layout>
-    <SEO />
+    <SEO
+      title="Contact | Infos pratiques"
+      description="Infos et formulaire de contact des Ateliers Chartreux"
+      pathname="/contact"
+    />
+
     <section className={contact}>
       <h2 className={contact__title}>Ateliers Chartreux</h2>
 
@@ -39,6 +44,7 @@ export default () => (
         </p>
       </div>
     </section>
+
     <ContactForm />
   </Layout>
 )

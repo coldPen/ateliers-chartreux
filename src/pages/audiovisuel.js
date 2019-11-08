@@ -7,7 +7,11 @@ import "../reset.scss"
 
 export default () => (
   <Layout>
-    <SEO />
+    <SEO
+      title="Audiovisuel"
+      description="Présentation du pôle Audiovisuel des Ateliers Chartreux"
+      pathname="/audiovisuel"
+    />
     <section>
       <h1></h1>
       <p></p>

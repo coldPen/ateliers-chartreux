@@ -1,17 +1,72 @@
 import React from "react"
+import { graphql } from "gatsby"
 
 import Layout from "../components/Layout"
 import SEO from "../components/SEO"
+import NonStretchedImage from "../components/NonStretchedImage"
 
 import "../reset.scss"
+import {
+  main,
+  main__title,
+  main__text,
+  main__image,
+  details,
+} from "./informatique.module.scss"
 
-export default () => (
+export default ({ data }) => (
   <Layout>
-    <SEO />
-    <section>
-      <h1></h1>
-      <p></p>
+    <SEO
+      title={data.contentfulInformatique.titre}
+      description="Présentation du pôle Informatique des Ateliers Chartreux"
+      pathname="/informatique"
+    />
+    <section className={main}>
+      <h1 className={main__title}>{data.contentfulInformatique.titre}</h1>
+      <div
+        className={main__text}
+        dangerouslySetInnerHTML={{
+          __html:
+            data.contentfulInformatique.textePrincipal.childMarkdownRemark.html,
+        }}
+      />
+      <NonStretchedImage
+        className={main__image}
+        fluid={data.contentfulInformatique.image.fluid}
+        alt={data.contentfulInformatique.image.description}
+      />
     </section>
-    <section></section>
+    <section
+      className={details}
+      dangerouslySetInnerHTML={{
+        __html: data.contentfulInformatique.details.childMarkdownRemark.html,
+      }}
+    />
   </Layout>
 )
+
+export const query = graphql`
+  query {
+    contentfulInformatique {
+      titre
+      image {
+        file {
+          url
+        }
+        fluid {
+          ...GatsbyContentfulFluid
+        }
+      }
+      textePrincipal {
+        childMarkdownRemark {
+          html
+        }
+      }
+      details {
+        childMarkdownRemark {
+          html
+        }
+      }
+    }
+  }
+`

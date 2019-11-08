@@ -10,5 +10,18 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+
+    // General rules for edited content
+    p:not(:last-child) {
+      margin-bottom: 1rem;
+    }
+
+    ul {
+      padding-left: 1rem;
+
+      li:not(:last-child) {
+        margin-bottom: .6rem;
+      }
+    }
   }
 }

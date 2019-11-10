@@ -2,7 +2,7 @@
 
 .main {
     padding: 8rem 10rem;
-    background: rgba(#000, 0.25);
+    background: $blue-gradient-2;
     color: #fff;
 
     display: grid;
@@ -41,6 +41,8 @@
     &__image {
         grid-row: 1 / 3;
         grid-column: 2 / 3;
+
+        @include block-corners(2rem);
     }
 }
 

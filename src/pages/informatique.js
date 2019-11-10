@@ -45,6 +45,7 @@ export default ({ data }) => (
   </Layout>
 )
 
+// fluid: penser à préciser les dimensions optimum avant mise en ligne
 export const query = graphql`
   query {
     contentfulInformatique {

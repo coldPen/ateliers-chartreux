@@ -23,14 +23,14 @@
     "gatsby-source-contentful": "^2.1.55",
     "gatsby-transformer-remark": "^2.6.32",
     "node-sass": "^4.13.0",
-    "preact": "^10.0.4",
+    "preact": "^10.0.5",
     "prop-types": "^15.7.2",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
     "react-helmet": "^5.2.1"
   },
   "devDependencies": {
-    "prettier": "^1.18.2"
+    "prettier": "^1.19.1"
   },
   "repository": {
     "type": "git",

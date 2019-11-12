@@ -125,16 +125,19 @@ $white-separation-border: 0.1rem solid rgba(#fff, 0.4);
   font-family: "Rubik";
   src: url("../fonts/Rubik/Rubik-Regular.ttf") format("truetype");
   font-weight: 400;
+  font-display: swap;
 }
 
 @font-face {
   font-family: "Saira";
   src: url("../fonts/Saira/Saira-Regular.ttf") format("truetype");
   font-weight: 400;
+  font-display: swap;
 }
 
 @font-face {
   font-family: "Saira";
   src: url("../fonts/Saira/Saira-SemiBold.ttf") format("truetype");
   font-weight: 600;
+  font-display: swap;
 }

@@ -66,9 +66,7 @@
   }
 
   &__articleHeader {
-    font-family: $saira;
     margin-bottom: 2rem;
-
     transition: all 0.2s;
   }
 
@@ -82,6 +80,7 @@
   }
 
   &__articleDate {
+    font-family: $saira;
     font-size: 1.4rem;
   }
 

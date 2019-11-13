@@ -1,3 +1,52 @@
 @import "../common";
 
-.impression3d {}
+.impression {
+  padding: 8rem 10rem;
+  background: $red-gradient;
+  color: #fff;
+
+  @include respond(until-normal) {
+    padding: 8rem 8rem;
+  }
+
+  @include respond(until-medium) {
+    padding: 8rem 6rem;
+  }
+
+  @include respond(until-small-1) {
+    padding: 8rem 2rem;
+  }
+
+  &__title {
+    font-size: 3rem;
+    margin-bottom: 3rem;
+  }
+
+  &__3d,
+  &__2d {
+    display: grid;
+    align-items: center;
+  }
+
+  &__text {
+    h2 {
+      font-size: 2.4rem;
+    }
+  }
+
+  &__3d {
+    grid-template-columns: 1fr 20rem;
+
+    .impression__text {
+      grid-column: 1 / 2;
+    }
+
+    .impression__image {
+      grid-column: 2 / 3;
+    }
+  }
+
+  &__2d {
+    grid-template-columns: 20rem 1fr;
+  }
+}

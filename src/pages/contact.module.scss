@@ -1,64 +1,63 @@
 @import "../common";
 
 .contact {
-    color: #fff;
-    background: $blue-gradient;
+  color: #fff;
+  background: $blue-gradient;
 
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 3rem 10rem;
+
+  @include respond(until-normal) {
+    padding: 3rem 8rem;
+  }
+
+  @include respond(until-medium) {
+    padding: 3rem 6rem;
+  }
+
+  @include respond(until-small-1) {
+    padding: 3rem 2rem;
+  }
+
+  &__title {
+    font-size: 3.4rem;
+  }
+
+  &__transports {
+    font-family: $rubik;
+    font-size: 1.8rem;
+    text-align: center;
+  }
+
+  &__data {
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
     align-items: center;
 
-    padding: 3rem 10rem;
+    & > * {
+      font-family: $rubik;
+      font-size: 1.8rem;
 
-    @include respond(until-normal) {
-        padding: 3rem 8rem;
+      & > a,
+      & > a:link,
+      & > a:link:visited {
+        color: #fff;
+      }
     }
+  }
 
-    @include respond(until-medium) {
-        padding: 3rem 6rem;
-    }
+  &__address {
+    text-align: right;
+    padding-right: 1rem;
+    border-right: 0.1rem solid #fff;
+  }
 
-    @include respond(until-small-1) {
-        padding: 3rem 2rem;
-    }
-
-    &__title {
-        font-family: $saira;
-        font-size: 3.4rem;
-    }
-
-    &__transports {
-        font-family: $rubik;
-        font-size: 1.8rem;
-        text-align: center;
-    }
-
-    &__data {
-        margin-top: 2rem;
-        display: grid;
-        grid-template-columns: repeat(2, max-content);
-        align-items: center;
-
-        &>* {
-            font-family: $rubik;
-            font-size: 1.8rem;
-
-            &>a,
-            &>a:link,
-            &>a:link:visited {
-                color: #fff;
-            }
-        }
-    }
-
-    &__address {
-        text-align: right;
-        padding-right: 1rem;
-        border-right: 0.1rem solid #fff;
-    }
-
-    &__phone {
-        text-align: left;
-        padding-left: 1rem;
-    }
+  &__phone {
+    text-align: left;
+    padding-left: 1rem;
+  }
 }

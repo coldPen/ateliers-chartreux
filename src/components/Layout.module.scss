@@ -12,6 +12,12 @@
     justify-content: center;
 
     // General rules for edited content
+    h1,
+    h2,
+    h3 {
+      font-family: $saira;
+    }
+
     p:not(:last-child) {
       margin-bottom: 1rem;
     }
@@ -20,7 +26,7 @@
       padding-left: 1rem;
 
       li:not(:last-child) {
-        margin-bottom: .6rem;
+        margin-bottom: 0.6rem;
       }
     }
   }

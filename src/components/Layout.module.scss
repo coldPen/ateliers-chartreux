@@ -18,6 +18,10 @@
       font-family: $saira;
     }
 
+    *:not(h1, h2, h3) {
+      font-family: $rubik;
+    }
+
     p:not(:last-child) {
       margin-bottom: 1rem;
     }

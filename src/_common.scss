@@ -1,7 +1,9 @@
 /* VARIABLES */
 // FONTS
-$saira: "Saira", sans-serif;
-$rubik: "Rubik", sans-serif;
+$saira: "Saira",
+sans-serif;
+$rubik: "Rubik",
+sans-serif;
 
 // COLORS
 $dark-1: #232526;
@@ -9,6 +11,7 @@ $orange-gradient: linear-gradient(to right, #e65c00, #f9d423);
 $red-gradient: linear-gradient(to right, #ed213a, #93291e);
 $blue-gradient: linear-gradient(to right, #36d1dc, #5b86e5);
 $blue-gradient-2: linear-gradient(to right, #283c86, #45a247);
+$green-gradient: linear-gradient(to right, #11998e, #38ef7d);
 $grey-gradient: linear-gradient(141deg, #232526, #414345);
 $block-background: rgba(#000, 0.25);
 $block-background-hovered: rgba(#000, 0.5);
@@ -28,37 +31,46 @@ $white-separation-border: 0.1rem solid rgba(#fff, 0.4);
 
 @mixin block-corners($corners-size) {
   clip-path: polygon(
-    /* top left */ 0 $corners-size,
+    /* top left */
+    0 $corners-size,
     $corners-size 0,
-    /* top right */ calc(100% - #{$corners-size}) 0,
+    /* top right */
+    calc(100% - #{$corners-size}) 0,
     100% $corners-size,
-    /* bottom right */ 100% calc(100% - #{$corners-size}),
+    /* bottom right */
+    100% calc(100% - #{$corners-size}),
     calc(100% - #{$corners-size}) 100%,
-    /* bottom left */ $corners-size 100%,
-    0 calc(100% - #{$corners-size})
-  );
+    /* bottom left */
+    $corners-size 100%,
+    0 calc(100% - #{$corners-size}));
 }
 
 @mixin block-corners-to-right($corners-size) {
   clip-path: polygon(
-    /* top left */ 0% $corners-size,
+    /* top left */
+    0% $corners-size,
     $corners-size 0%,
-    /* top right */ 100% 0,
-    /* bottom right */ 100% calc(100% - #{$corners-size}),
+    /* top right */
+    100% 0,
+    /* bottom right */
+    100% calc(100% - #{$corners-size}),
     calc(100% - #{$corners-size}) 100%,
-    /* bottom left */ 0 100%
-  );
+    /* bottom left */
+    0 100%);
 }
 
 @mixin block-corners-to-left($corners-size) {
   clip-path: polygon(
-    /* top left */ 0 0,
-    /* top right */ calc(100% - #{$corners-size}) 0,
+    /* top left */
+    0 0,
+    /* top right */
+    calc(100% - #{$corners-size}) 0,
     100% $corners-size,
-    /* bottom right */ 100% 100%,
-    /* bottom left */ $corners-size 100%,
-    0 calc(100% - #{$corners-size})
-  );
+    /* bottom right */
+    100% 100%,
+    /* bottom left */
+    $corners-size 100%,
+    0 calc(100% - #{$corners-size}));
 }
 
 @mixin text-gradient {

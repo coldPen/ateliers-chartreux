@@ -1,40 +1,52 @@
 @import "../common";
 
 .impression {
-  padding: 8rem 10rem;
-  background: $red-gradient;
-  color: #fff;
 
-  @include respond(until-normal) {
-    padding: 8rem 8rem;
-  }
+  &>* {
+    color: #fff;
 
-  @include respond(until-medium) {
-    padding: 8rem 6rem;
-  }
+    margin-bottom: 3rem;
 
-  @include respond(until-small-1) {
-    padding: 8rem 2rem;
+    padding: 4rem 10rem;
+
+    @include respond(until-normal) {
+      padding: 4rem 8rem;
+    }
+
+    @include respond(until-medium) {
+      padding: 4rem 6rem;
+    }
+
+    @include respond(until-small-1) {
+      padding: 4rem 2rem;
+    }
   }
 
   &__title {
+    background: $red-gradient;
     font-size: 3rem;
-    margin-bottom: 3rem;
   }
 
   &__3d,
   &__2d {
     display: grid;
     align-items: center;
+    gap: 2rem;
   }
 
   &__text {
     h2 {
       font-size: 2.4rem;
     }
+
+    *:not(h1, h2, h3) {
+      font-size: 1.8rem;
+    }
   }
 
   &__3d {
+    background: $block-background;
+
     grid-template-columns: 1fr 20rem;
 
     .impression__text {
@@ -43,10 +55,26 @@
 
     .impression__image {
       grid-column: 2 / 3;
+
+      @include block-corners(2rem)
     }
   }
 
   &__2d {
+    background: $block-background;
+
     grid-template-columns: 20rem 1fr;
+
+    .impression__text {
+      grid-column: 2 / 3;
+      grid-row: 1 / 2;
+    }
+
+    .impression__image {
+      grid-column: 1 / 2;
+      grid-row: 1 / 2;
+
+      @include block-corners(2rem)
+    }
   }
 }

@@ -32,6 +32,10 @@
     display: grid;
     align-items: center;
     gap: 2rem;
+
+    @include respond(until-small-1) {
+      grid-template-rows: min-content min-content;
+    }
   }
 
   &__text {
@@ -51,12 +55,19 @@
 
     .impression__text {
       grid-column: 1 / 2;
+
+      @include respond(until-small-1) {
+        grid-row: 1 / 2;
+      }
     }
 
     .impression__image {
       grid-column: 2 / 3;
 
-      @include block-corners(2rem)
+      @include block-corners(2rem) @include respond(until-small-1) {
+        grid-column: 1 / 2;
+        // grid-row: 2 / 3;
+      }
     }
   }
 

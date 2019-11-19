@@ -1,0 +1,80 @@
+@import "../common";
+
+.main {
+    padding: 8rem 10rem;
+    background: $blue-gradient-2;
+    color: #fff;
+
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+    align-items: center;
+
+    @include respond(until-normal) {
+        padding: 8rem 8rem;
+    }
+
+    @include respond(until-medium) {
+        padding: 8rem 6rem;
+    }
+
+    @include respond(until-small-1) {
+        padding: 8rem 2rem;
+    }
+
+    &__content {
+        grid-column: 1 / 2;
+
+        &>*:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &__title {
+        font-size: 3rem;
+    }
+
+    &__text {
+        font-size: 1.8rem;
+    }
+
+    &__image {
+        grid-column: 2 / 3;
+
+        @include block-corners(2rem);
+    }
+}
+
+.details {
+    padding: 3rem 10rem;
+
+    color: #fff;
+    font-size: 1.8rem;
+
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 2rem;
+    align-items: center;
+
+    @include respond(until-normal) {
+        padding: 3rem 8rem;
+    }
+
+    @include respond(until-medium) {
+        padding: 3rem 6rem;
+    }
+
+    @include respond(until-small-1) {
+        padding: 3rem 2rem;
+    }
+
+    &__image {
+        @include block-corners(2rem);
+    }
+
+    &__text {
+        &>*:last-child {
+            margin-bottom: 0;
+        }
+    }
+}

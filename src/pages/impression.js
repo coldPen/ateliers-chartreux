@@ -35,6 +35,7 @@ export default ({ data, location }) => (
         <NonStretchedImage
           className={impression__image}
           fluid={data.contentfulImpression.image3d.fluid}
+          alt={data.contentfulImpression.image3d.description}
         />
       </section>
       <section className={impression__2d}>
@@ -48,6 +49,7 @@ export default ({ data, location }) => (
         <NonStretchedImage
           className={impression__image}
           fluid={data.contentfulImpression.image2d.fluid}
+          alt={data.contentfulImpression.image2d.description}
         />
       </section>
     </div>
@@ -70,6 +72,7 @@ export const query = graphql`
         fluid {
           ...GatsbyContentfulFluid
         }
+        description
       }
       impression2d {
         childMarkdownRemark {
@@ -80,6 +83,7 @@ export const query = graphql`
         fluid {
           ...GatsbyContentfulFluid
         }
+        description
       }
     }
   }

@@ -8,6 +8,7 @@ import NonStretchedImage from "../components/NonStretchedImage"
 import "../reset.scss"
 import {
   main,
+  main__content,
   main__title,
   main__text,
   main__image,
@@ -22,14 +23,17 @@ export default ({ data, location }) => (
       pathname={location.pathname}
     />
     <section className={main}>
-      <h1 className={main__title}>{data.contentfulInformatique.titre}</h1>
-      <div
-        className={main__text}
-        dangerouslySetInnerHTML={{
-          __html:
-            data.contentfulInformatique.textePrincipal.childMarkdownRemark.html,
-        }}
-      />
+      <div className={main__content}>
+        <h1 className={main__title}>{data.contentfulInformatique.titre}</h1>
+        <div
+          className={main__text}
+          dangerouslySetInnerHTML={{
+            __html:
+              data.contentfulInformatique.textePrincipal.childMarkdownRemark
+                .html,
+          }}
+        />
+      </div>
       <NonStretchedImage
         className={main__image}
         fluid={data.contentfulInformatique.image.fluid}

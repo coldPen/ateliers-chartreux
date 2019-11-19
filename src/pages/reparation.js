@@ -1,21 +1,76 @@
 import React from "react"
+import { graphql } from "gatsby"
 
 import Layout from "../components/Layout"
 import SEO from "../components/SEO"
+import NonStretchedImage from "../components/NonStretchedImage"
 
 import "../reset.scss"
+import {
+  main,
+  main__content,
+  main__title,
+  main__text,
+  main__image,
+  details,
+} from "./reparation.module.scss"
 
-export default () => (
+export default ({ data, location }) => (
   <Layout>
     <SEO
-      title="Réparation"
+      title={data.contentfulReparation.titre}
       description="Présentation du pôle Réparation des Ateliers Chartreux"
-      pathname="/reparation"
+      pathname={location.pathname}
     />
-    <section>
-      <h1></h1>
-      <p></p>
+    <section className={main}>
+      <div className={main__content}>
+        <h1 className={main__title}>{data.contentfulReparation.titre}</h1>
+        <div
+          className={main__text}
+          dangerouslySetInnerHTML={{
+            __html:
+              data.contentfulReparation.textePrincipal.childMarkdownRemark.html,
+          }}
+        />
+      </div>
+      <NonStretchedImage
+        className={main__image}
+        fluid={data.contentfulReparation.image.fluid}
+        alt={data.contentfulReparation.image.description}
+      />
     </section>
-    <section></section>
+    <section
+      className={details}
+      dangerouslySetInnerHTML={{
+        __html: data.contentfulReparation.details.childMarkdownRemark.html,
+      }}
+    />
   </Layout>
 )
+
+// fluid: penser à préciser les dimensions optimum avant mise en ligne
+export const query = graphql`
+  query {
+    contentfulReparation {
+      titre
+      image {
+        file {
+          url
+        }
+        fluid {
+          ...GatsbyContentfulFluid
+        }
+      }
+      textePrincipal {
+        childMarkdownRemark {
+          html
+        }
+      }
+      details {
+        childMarkdownRemark {
+          html
+        }
+      }
+    }
+  }
+`

@@ -14,12 +14,12 @@ import {
   details,
 } from "./informatique.module.scss"
 
-export default ({ data }) => (
+export default ({ data, location }) => (
   <Layout>
     <SEO
       title={data.contentfulInformatique.titre}
       description="Présentation du pôle Informatique des Ateliers Chartreux"
-      pathname="/informatique"
+      pathname={location.pathname}
     />
     <section className={main}>
       <h1 className={main__title}>{data.contentfulInformatique.titre}</h1>

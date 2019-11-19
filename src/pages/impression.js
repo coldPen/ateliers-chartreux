@@ -15,12 +15,12 @@ import {
   impression__image,
 } from "./impression.module.scss"
 
-export default ({ data }) => (
+export default ({ data, location }) => (
   <Layout>
     <SEO
       title={data.contentfulImpression.titre}
       description="Présentation du pôle Impression 2D / 3D des Ateliers Chartreux"
-      pathname="/impression"
+      pathname={location.pathname}
     />
     <div className={impression}>
       <h1 className={impression__title}>{data.contentfulImpression.titre}</h1>

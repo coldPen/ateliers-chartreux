@@ -11,8 +11,10 @@ import {
   main__content,
   main__title,
   main__text,
+  main__imageContainer,
   main__image,
   details,
+  details__imageContainer,
   details__image,
   details__text,
 } from "./audiovisuel.module.scss"
@@ -35,18 +37,22 @@ export default ({ data, location }) => (
           }}
         />
       </div>
-      <NonStretchedImage
-        className={main__image}
-        fluid={data.contentfulAudiovisuel.imageIntro.fluid}
-        alt={data.contentfulAudiovisuel.imageIntro.description}
-      />
+      <div className={main__imageContainer}>
+        <NonStretchedImage
+          className={main__image}
+          fluid={data.contentfulAudiovisuel.imageIntro.fluid}
+          alt={data.contentfulAudiovisuel.imageIntro.description}
+        />
+      </div>
     </section>
     <section className={details}>
-      <NonStretchedImage
-        className={details__image}
-        fluid={data.contentfulAudiovisuel.imageTechnique.fluid}
-        alt={data.contentfulAudiovisuel.imageTechnique.description}
-      />
+      <div className={details__imageContainer}>
+        <NonStretchedImage
+          className={details__image}
+          fluid={data.contentfulAudiovisuel.imageTechnique.fluid}
+          alt={data.contentfulAudiovisuel.imageTechnique.description}
+        />
+      </div>
       <div
         className={details__text}
         dangerouslySetInnerHTML={{

@@ -11,6 +11,7 @@ import {
   main__content,
   main__title,
   main__text,
+  main__imageContainer,
   main__image,
   details,
 } from "./informatique.module.scss"
@@ -34,11 +35,13 @@ export default ({ data, location }) => (
           }}
         />
       </div>
-      <NonStretchedImage
-        className={main__image}
-        fluid={data.contentfulInformatique.image.fluid}
-        alt={data.contentfulInformatique.image.description}
-      />
+      <div className={main__imageContainer}>
+        <NonStretchedImage
+          className={main__image}
+          fluid={data.contentfulInformatique.image.fluid}
+          alt={data.contentfulInformatique.image.description}
+        />
+      </div>
     </section>
     <section
       className={details}

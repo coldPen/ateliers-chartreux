@@ -6,15 +6,15 @@
 
     padding: 1rem 10rem;
 
-    @include respond(until-normal) {
+    @include respond(until-1200px) {
         padding: 1rem 8rem;
     }
 
-    @include respond(until-medium) {
+    @include respond(until-900px) {
         padding: 0.6rem 6rem;
     }
 
-    @include respond(until-small-1) {
+    @include respond(until-600px) {
         padding: 0.6rem 2rem;
     }
 
@@ -26,7 +26,7 @@
 
         position: relative;
 
-        @include respond(until-normal) {
+        @include respond(until-1200px) {
             justify-content: space-between;
             grid-template-columns: repeat(2, min-content);
         }
@@ -35,7 +35,7 @@
     &__menuButton {
         display: none;
 
-        @include respond(until-normal) {
+        @include respond(until-1200px) {
             display: flex;
             align-items: center;
 
@@ -68,7 +68,7 @@
         align-content: center;
         height: 6rem;
 
-        @include respond(until-normal) {
+        @include respond(until-1200px) {
             display: none;
 
             &_expanded {
@@ -96,7 +96,7 @@
     }
 
     &__element {
-        @include respond(until-normal) {
+        @include respond(until-1200px) {
             width: min-content;
 
             &:not(:last-child) {
@@ -187,7 +187,7 @@
             opacity: 0.75;
         }
 
-        @include respond(until-normal) {
+        @include respond(until-1200px) {
             grid-column: auto;
         }
 

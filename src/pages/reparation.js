@@ -11,6 +11,7 @@ import {
   main__content,
   main__title,
   main__text,
+  main__imageContainer,
   main__image,
   details,
 } from "./reparation.module.scss"
@@ -33,11 +34,13 @@ export default ({ data, location }) => (
           }}
         />
       </div>
-      <NonStretchedImage
-        className={main__image}
-        fluid={data.contentfulReparation.image.fluid}
-        alt={data.contentfulReparation.image.description}
-      />
+      <div className={main__imageContainer}>
+        <NonStretchedImage
+          className={main__image}
+          fluid={data.contentfulReparation.image.fluid}
+          alt={data.contentfulReparation.image.description}
+        />
+      </div>
     </section>
     <section
       className={details}

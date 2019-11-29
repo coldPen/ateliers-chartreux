@@ -6,15 +6,15 @@
 
     padding: 3rem 10rem;
 
-    @include respond(until-normal) {
+    @include respond(until-1200px) {
         padding: 3rem 8rem;
     }
 
-    @include respond(until-medium) {
+    @include respond(until-900px) {
         padding: 3rem 6rem;
     }
 
-    @include respond(until-small-1) {
+    @include respond(until-600px) {
         padding: 3rem 2rem;
     }
 
@@ -27,7 +27,7 @@
         display: flex;
         justify-content: space-between;
 
-        @include respond(until-tiny) {
+        @include respond(until-400px) {
             display: grid;
             grid-template-areas:
                 "logo link1"
@@ -41,7 +41,7 @@
 
     &__link {
 
-        @include respond(until-tiny) {
+        @include respond(until-400px) {
             &_1 {
                 grid-area: link1;
             }
@@ -59,7 +59,7 @@
             font-family: $saira;
             text-decoration: none;
 
-            @include respond(until-tiny) {
+            @include respond(until-400px) {
                 text-align: right;
             }
 

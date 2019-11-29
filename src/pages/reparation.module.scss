@@ -7,24 +7,29 @@
 
     display: grid;
     grid-template-columns: 2fr 1fr;
-    gap: 2rem;
+    gap: 4rem;
     align-items: center;
 
-    @include respond(until-normal) {
+    @include respond(until-1200px) {
         padding: 8rem 8rem;
     }
 
-    @include respond(until-medium) {
+    @include respond(until-900px) {
         padding: 8rem 6rem;
     }
 
-    @include respond(until-small-1) {
+    @include respond(until-800px) {
+        grid-template-columns: auto;
+    }
+
+    @include respond(until-600px) {
         padding: 8rem 2rem;
     }
 
     &__content {
-        grid-column: 1 / 2;
-        grid-row: 1 / 2;
+        @include respond(until-800px) {
+            grid-row: 2 / 3;
+        }
     }
 
     &__title {
@@ -39,29 +44,35 @@
         }
     }
 
+    &__imageContainer {
+
+        filter: drop-shadow(0 .3rem 1.5rem rgba(0, 0, 0, 0.2));
+
+        @include respond(until-800px) {}
+    }
+
     &__image {
-        grid-column: 2 / 3;
 
         @include block-corners(2rem);
     }
 }
 
 .details {
-    padding: 3rem 10rem;
+    padding: 8rem 10rem;
 
     color: #fff;
     font-size: 1.8rem;
     font-family: $rubik;
 
-    @include respond(until-normal) {
-        padding: 3rem 8rem;
+    @include respond(until-1200px) {
+        padding: 8rem 8rem;
     }
 
-    @include respond(until-medium) {
-        padding: 3rem 6rem;
+    @include respond(until-900px) {
+        padding: 8rem 6rem;
     }
 
-    @include respond(until-small-1) {
-        padding: 3rem 2rem;
+    @include respond(until-600px) {
+        padding: 8rem 2rem;
     }
 }

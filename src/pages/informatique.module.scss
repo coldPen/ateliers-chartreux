@@ -7,24 +7,31 @@
 
   display: grid;
   grid-template-columns: 2fr 1fr;
-  gap: 2rem;
+  gap: 4rem;
   align-items: center;
 
-  @include respond(until-normal) {
+  @include respond(until-1200px) {
     padding: 8rem 8rem;
   }
 
-  @include respond(until-medium) {
+  @include respond(until-900px) {
     padding: 8rem 6rem;
   }
 
-  @include respond(until-small-1) {
+  @include respond(until-800px) {
+    grid-template-columns: auto;
+  }
+
+  @include respond(until-600px) {
     padding: 8rem 2rem;
   }
 
   &__content {
     grid-column: 1 / 2;
-    grid-row: 1 / 2;
+
+    @include respond(until-800px) {
+      grid-row: 2 / 3;
+    }
   }
 
   &__title {
@@ -39,10 +46,24 @@
     }
   }
 
-  &__image {
+  &__imageContainer {
     grid-column: 2 / 3;
 
+    filter: drop-shadow(0 .3rem 1.5rem rgba(0, 0, 0, 0.2));
+
+    @include respond(until-800px) {
+      grid-row: 1 / 2;
+      grid-column: 1 / 2;
+    }
+  }
+
+  &__image {
     @include block-corners(2rem);
+
+    @include respond(until-800px) {
+      max-width: 60rem;
+      margin: 0 auto;
+    }
   }
 }
 
@@ -53,15 +74,15 @@
   font-size: 1.8rem;
   font-family: $rubik;
 
-  @include respond(until-normal) {
+  @include respond(until-1200px) {
     padding: 3rem 8rem;
   }
 
-  @include respond(until-medium) {
+  @include respond(until-900px) {
     padding: 3rem 6rem;
   }
 
-  @include respond(until-small-1) {
+  @include respond(until-600px) {
     padding: 3rem 2rem;
   }
 }

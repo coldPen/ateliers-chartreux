@@ -9,15 +9,15 @@
 
     padding: 4rem 10rem;
 
-    @include respond(until-normal) {
+    @include respond(until-1200px) {
       padding: 4rem 8rem;
     }
 
-    @include respond(until-medium) {
+    @include respond(until-900px) {
       padding: 4rem 6rem;
     }
 
-    @include respond(until-small-1) {
+    @include respond(until-600px) {
       padding: 4rem 2rem;
     }
   }
@@ -33,7 +33,7 @@
     align-items: center;
     gap: 2rem;
 
-    @include respond(until-small-1) {
+    @include respond(until-600px) {
       grid-template-rows: min-content min-content;
     }
   }
@@ -56,7 +56,7 @@
     .impression__text {
       grid-column: 1 / 2;
 
-      @include respond(until-small-1) {
+      @include respond(until-600px) {
         grid-row: 1 / 2;
       }
     }
@@ -64,9 +64,10 @@
     .impression__image {
       grid-column: 2 / 3;
 
-      @include block-corners(2rem) @include respond(until-small-1) {
+      @include block-corners(2rem);
+
+      @include respond(until-600px) {
         grid-column: 1 / 2;
-        // grid-row: 2 / 3;
       }
     }
   }

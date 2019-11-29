@@ -22,8 +22,8 @@
       font-family: $rubik;
     }
 
-    p,
-    ul {
+    p:not(:last-child),
+    ul:not(:last-child) {
       margin-bottom: 1.2rem;
     }
 

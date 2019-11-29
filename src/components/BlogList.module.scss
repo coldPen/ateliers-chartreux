@@ -7,24 +7,24 @@
 
   padding: 3rem 10rem 1.5rem;
 
-  @include respond(until-normal) {
+  @include respond(until-1200px) {
     padding: 3rem 8rem 1.5rem;
   }
 
-  @include respond(until-medium) {
+  @include respond(until-900px) {
     padding: 3rem 6rem 1.5rem;
   }
 
-  @include respond(until-small-1) {
+  @include respond(until-600px) {
     padding: 3rem 2rem 1.5rem;
   }
 
-  @include respond(until-tiny) {
+  @include respond(until-400px) {
     padding: 3rem 0 1.5rem;
     grid-gap: 2rem;
   }
 
-  @include respond(from-large) {
+  @include respond(from-1800px) {
     /* Doesn't work well with "text-overflow: ellipsis" in articleTitle: */
     // grid-template-columns: repeat(4, 1fr);
 
@@ -40,7 +40,7 @@
     color: #fff;
     padding: 3rem;
 
-    @include respond(until-tiny) {
+    @include respond(until-400px) {
       padding: 2rem;
     }
 
@@ -49,7 +49,6 @@
 
     &:hover {
       background: $block-background-hovered;
-      transform: scale(1.01);
 
       .blogList__articleHeader {
         transform: translateY(0.4rem);

@@ -8,15 +8,15 @@
   background: rgba(#000, 0.25);
   color: #fff;
 
-  @include respond(until-normal) {
+  @include respond(until-1200px) {
     padding: 3rem 8rem;
   }
 
-  @include respond(until-medium) {
+  @include respond(until-900px) {
     padding: 3rem 6rem;
   }
 
-  @include respond(until-small-1) {
+  @include respond(until-600px) {
     padding: 3rem 2rem;
   }
 
@@ -26,11 +26,11 @@
     column-gap: 3rem;
     line-height: 1.6;
 
-    @include respond(until-small-2) {
+    @include respond(until-800px) {
       column-count: 1;
     }
 
-    @include respond(from-large) {
+    @include respond(from-1800px) {
       column-count: 3;
     }
   }

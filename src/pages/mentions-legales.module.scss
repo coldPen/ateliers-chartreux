@@ -1,0 +1,28 @@
+@import '../common';
+
+.legal {
+
+    padding: 3rem 10rem;
+
+    color: #fff;
+    font-size: 1.8rem;
+    font-family: $rubik;
+
+    @include respond(until-1200px) {
+        padding: 3rem 8rem;
+    }
+
+    @include respond(until-900px) {
+        padding: 3rem 6rem;
+    }
+
+    @include respond(until-600px) {
+        padding: 3rem 2rem;
+    }
+
+    &__title {
+        font-size: 3.4rem;
+        border-bottom: 0.1rem solid #fff;
+        margin-bottom: 3rem;
+    }
+}

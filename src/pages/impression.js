@@ -12,6 +12,7 @@ import {
   impression__3d,
   impression__2d,
   impression__text,
+  impression__imageContainer,
   impression__image,
 } from "./impression.module.scss"
 
@@ -19,7 +20,7 @@ export default ({ data, location }) => (
   <Layout>
     <SEO
       title={data.contentfulImpression.titre}
-      description="Présentation du pôle Impression 2D / 3D des Ateliers Chartreux"
+      description={data.contentfulImpression.description.description}
       pathname={location.pathname}
     />
     <div className={impression}>
@@ -32,11 +33,13 @@ export default ({ data, location }) => (
               data.contentfulImpression.impression3d.childMarkdownRemark.html,
           }}
         />
-        <NonStretchedImage
-          className={impression__image}
-          fluid={data.contentfulImpression.image3d.fluid}
-          alt={data.contentfulImpression.image3d.description}
-        />
+        <div className={impression__imageContainer}>
+          <NonStretchedImage
+            className={impression__image}
+            fluid={data.contentfulImpression.image3d.fluid}
+            alt={data.contentfulImpression.image3d.description}
+          />
+        </div>
       </section>
       <section className={impression__2d}>
         <div
@@ -46,11 +49,13 @@ export default ({ data, location }) => (
               data.contentfulImpression.impression2d.childMarkdownRemark.html,
           }}
         />
-        <NonStretchedImage
-          className={impression__image}
-          fluid={data.contentfulImpression.image2d.fluid}
-          alt={data.contentfulImpression.image2d.description}
-        />
+        <div className={impression__imageContainer}>
+          <NonStretchedImage
+            className={impression__image}
+            fluid={data.contentfulImpression.image2d.fluid}
+            alt={data.contentfulImpression.image2d.description}
+          />
+        </div>
       </section>
     </div>
   </Layout>
@@ -60,6 +65,9 @@ export const query = graphql`
   query {
     contentfulImpression {
       titre
+      description {
+        description
+      }
       impression3d {
         childMarkdownRemark {
           html

@@ -51,7 +51,7 @@
   &__3d {
     background: $block-background;
 
-    grid-template-columns: 1fr 20rem;
+    grid-template-columns: 1fr 40rem;
 
     .impression__text {
       grid-column: 1 / 2;
@@ -61,13 +61,17 @@
       }
     }
 
-    .impression__image {
+    .impression__imageContainer {
       grid-column: 2 / 3;
 
-      @include block-corners(2rem);
+      filter: drop-shadow(0 .3rem 1.5rem rgba(0, 0, 0, 0.2));
 
       @include respond(until-600px) {
         grid-column: 1 / 2;
+      }
+
+      .impression__image {
+        @include block-corners(2rem);
       }
     }
   }
@@ -75,18 +79,22 @@
   &__2d {
     background: $block-background;
 
-    grid-template-columns: 20rem 1fr;
+    grid-template-columns: 40rem 1fr;
 
     .impression__text {
       grid-column: 2 / 3;
       grid-row: 1 / 2;
     }
 
-    .impression__image {
+    .impression__imageContainer {
       grid-column: 1 / 2;
       grid-row: 1 / 2;
 
-      @include block-corners(2rem)
+      filter: drop-shadow(0 .3rem 1.5rem rgba(0, 0, 0, 0.2));
+
+      .impression__image {
+        @include block-corners(2rem)
+      }
     }
   }
 }

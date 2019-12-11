@@ -3,12 +3,12 @@ import React from "react"
 import Header from "./Header"
 import Footer from "./Footer"
 
-import { container, container__content } from "./Layout.module.scss"
+import { layout, layout__content } from "./Layout.module.scss"
 
 export default ({ children }) => (
-  <div className={container}>
+  <div className={layout}>
     <Header />
-    <main className={container__content}>{children}</main>
+    <main className={layout__content}>{children}</main>
     <Footer />
   </div>
 )

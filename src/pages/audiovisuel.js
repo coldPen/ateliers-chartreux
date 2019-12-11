@@ -23,7 +23,7 @@ export default ({ data, location }) => (
   <Layout>
     <SEO
       title={data.contentfulAudiovisuel.titre}
-      description="Présentation du pôle Audiovisuel des Ateliers Chartreux"
+      description={data.contentfulAudiovisuel.description.description}
       pathname={location.pathname}
     />
     <section className={main}>
@@ -68,6 +68,9 @@ export const query = graphql`
   query {
     contentfulAudiovisuel {
       titre
+      description {
+        description
+      }
       texteIntro {
         childMarkdownRemark {
           html

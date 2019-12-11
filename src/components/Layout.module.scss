@@ -1,6 +1,6 @@
 @import "../common";
 
-.container {
+.layout {
   display: flex;
   flex-direction: column;
 
@@ -22,8 +22,8 @@
       font-family: $rubik;
     }
 
-    p:not(:last-child),
-    ul:not(:last-child) {
+    p:not(.contact__address, :last-child),
+    ul:not(.contact__address, :last-child) {
       margin-bottom: 1.2rem;
     }
 

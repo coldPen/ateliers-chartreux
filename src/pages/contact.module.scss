@@ -38,13 +38,13 @@
     grid-template-columns: repeat(2, max-content);
     align-items: center;
 
-    & > * {
+    &>* {
       font-family: $rubik;
       font-size: 1.8rem;
 
-      & > a,
-      & > a:link,
-      & > a:link:visited {
+      &>a,
+      &>a:link,
+      &>a:link:visited {
         color: #fff;
       }
     }

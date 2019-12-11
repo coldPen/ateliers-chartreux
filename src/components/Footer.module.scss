@@ -26,6 +26,8 @@
 
         display: flex;
         justify-content: space-between;
+        align-items: center;
+
 
         @include respond(until-400px) {
             display: grid;
@@ -36,7 +38,18 @@
     }
 
     &__logo {
-        grid-area: logo;
+
+        &>img {
+            width: 14rem;
+        }
+
+        &:hover {
+            opacity: 0.7;
+        }
+
+        @include respond(until-400px) {
+            grid-area: logo;
+        }
     }
 
     &__link {

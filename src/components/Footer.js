@@ -1,6 +1,7 @@
 import React from "react"
-
 import { Link } from "gatsby"
+
+import logo from "../../static/images/logo.png"
 
 import {
   footer,
@@ -15,7 +16,7 @@ export default () => (
   <footer className={footer}>
     <nav className={footer__navigation}>
       <Link to="/" className={footer__logo}>
-        Ateliers Chartreux
+        <img src={logo} alt="Ateliers Chartreux" />
       </Link>
       <Link to="/contact/" className={`${footer__link} ${footer__link_1}`}>
         Contact | Infos pratiques

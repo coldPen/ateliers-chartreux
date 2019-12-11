@@ -18,13 +18,30 @@
       font-family: $saira;
     }
 
+    h1 {
+      margin-bottom: 2rem;
+    }
+
+    h2 {
+      margin-bottom: 1.6rem;
+    }
+
+    h3 {
+      margin-bottom: 1.2rem;
+    }
+
     *:not(h1, h2, h3) {
       font-family: $rubik;
     }
 
+    p,
+    ul {
+      line-height: 1.6;
+    }
+
     p:not(.contact__address, :last-child),
     ul:not(.contact__address, :last-child) {
-      margin-bottom: 1.2rem;
+      margin-bottom: 1rem;
     }
 
     ul {

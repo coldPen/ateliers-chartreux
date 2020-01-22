@@ -48,14 +48,16 @@ export default ({ data }) => (
               data.contentfulPhotoPosts.description.childMarkdownRemark.html,
           }}
         />
-        <div className={blogPost__tags}>
-          Tags :{" "}
-          {data.contentfulPhotoPosts.tags.map((tag, i) => (
-            <span className={blogPost__tag} key={i}>
-              {tag}
-            </span>
-          ))}
-        </div>
+        {data.contentfulPhotoPosts.tags ? (
+          <div className={blogPost__tags}>
+            Tags :{" "}
+            {data.contentfulPhotoPosts.tags.map((tag, i) => (
+              <span className={blogPost__tag} key={i}>
+                {tag}
+              </span>
+            ))}
+          </div>
+        ) : null}
       </div>
     </article>
   </Layout>

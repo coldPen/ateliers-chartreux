@@ -3,7 +3,7 @@ import { Link } from "gatsby"
 
 import Hamburger from "./Hamburger"
 
-import logo from "../../static/images/logo.png"
+import logo from "../../static/images/ateliers-chartreux.svg"
 
 import {
   header,

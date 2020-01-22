@@ -1,7 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
 
-import logo from "../../static/images/logo.png"
+import logo from "../../static/images/ateliers-chartreux.svg"
 
 import {
   footer,

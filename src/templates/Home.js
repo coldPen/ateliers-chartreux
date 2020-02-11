@@ -22,7 +22,6 @@ export default ({ data, pageContext }) => {
   )
 }
 
-// /!\ Ajuster les dimensions maximales d'images avant lancement du site
 export const query = graphql`
   query BlogListQuery($skip: Int!, $limit: Int!) {
     allContentfulPhotoPosts(

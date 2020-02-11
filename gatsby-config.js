@@ -42,11 +42,12 @@ module.exports = {
         mergeStyleHashes: false,
         directives: {
           "style-src": "'self' 'unsafe-inline'",
-          "img-src":
-            "'self' data: https://images.ctfassets.net/",
+          "img-src": "'self' data: https://images.ctfassets.net/",
+          "frame-src":
+            "'self' data: https://www.youtube.com/ https://vimeo.com/",
         },
       },
     },
-    `gatsby-plugin-preact`
+    `gatsby-plugin-preact`,
   ],
 }

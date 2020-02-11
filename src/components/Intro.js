@@ -9,10 +9,10 @@ import {
 } from "./Intro.module.scss"
 
 export default () => {
+  // date(formatString: "DD/MM/YYYY")
   const data = useStaticQuery(graphql`
     query {
       contentfulAccueil {
-        date(formatString: "DD/MM/YYYY")
         texte {
           childMarkdownRemark {
             html
@@ -24,7 +24,7 @@ export default () => {
   return (
     <section className={intro}>
       <div className={intro__content}>
-        <h2 className={intro__title}>Édito du {data.contentfulAccueil.date}</h2>
+        {/* <h2 className={intro__title}>Édito du {data.contentfulAccueil.date}</h2> */}
         <div
           className={intro__text}
           dangerouslySetInnerHTML={{

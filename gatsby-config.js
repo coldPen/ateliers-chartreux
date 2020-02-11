@@ -44,7 +44,7 @@ module.exports = {
           "style-src": "'self' 'unsafe-inline'",
           "img-src": "'self' data: https://images.ctfassets.net/",
           "frame-src":
-            "'self' data: https://www.youtube.com/ https://vimeo.com/",
+            "'self' data: https://www.youtube.com/ https://vimeo.com/ https://soundcloud.com/",
         },
       },
     },

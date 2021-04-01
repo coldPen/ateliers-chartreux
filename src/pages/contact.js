@@ -40,7 +40,9 @@ export default () => (
           </a>
         </p>
         <p className={contact__phone}>
-          <a href="tel:+33491649743">04 91 64 97 43</a>
+          <a href="mailto:associationasfm@laposte.net">
+            associationasfm@laposte.net
+          </a>
         </p>
       </div>
     </section>
